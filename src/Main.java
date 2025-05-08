@@ -1,15 +1,102 @@
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+abstract class Kamer {
+    String Naam;
+    String Beschrijving;
+    String Thema;
+    String Opdracht;
+    String Vragen;
+
+
+
+public void BinnenKomen() {
+    }
+
+
+}
+class Vloer extends Kamer {
+    public Vloer(String ..., int ...) {
+        super(..., ...);
+    }
+
+class Spel{
+    String Speler;
+    String Hub;
+    String Kamer;
+
+
+public static void StartGame() {
+    System.out.println("vul je GamerTag in:");
+    Scanner GamerTag = new Scanner(System.in);
+    String Naam = GamerTag.nextLine();
+    System.out.println("Naam: " + Naam );
+
+
+
+}
+
+public static void KiesKamer() {
+    System.out.println("Kies een kamer");
+    Scanner Kamer = new Scanner(System.in);
+    int Kamernr = Kamer.nextInt();
+
+    switch (Kamernr) {
+        case 1:
+            break;
+        case 2:
+            System.out.println("Kies een kamer");
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        case 6:
+            break;
+    }
+
+
+
+
+
+    }
+
+}
+class Speler{
+    String Positite;
+    String StatusPet;
+    String Naam;
+    String geslacht;
+
+
+public void Move() {
+}
+
+public void Damage() {
+
+
+    }
+}
+class Monster{
+    String Naam="Marcel";
+
+    public void GeeftDamage() {
+        System.out.println("Geeft damage of "+Naam);
+    }
+
+
+}
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Monster monster = new Monster();
+        Spel spel = new Spel();
+     //   monster.GeeftDamage();
+        Spel.StartGame();
+        Spel.KiesKamer();
     }
 }

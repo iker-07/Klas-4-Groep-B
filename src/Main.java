@@ -45,6 +45,8 @@ class kamer5 extends Kamer {
         super(..., ...);
     }
 }
+class Hub {
+}
 
 class Spel{
     String Speler;

@@ -16,10 +16,35 @@ public void BinnenKomen() {
 
 
 }
-class Vloer extends Kamer {
-    public Vloer(String ..., int ...) {
+class kamer1 extends Kamer {
+    public Vloer(String..., int...) {
         super(..., ...);
     }
+}
+class kamer2 extends Kamer {
+    public Vloer(String..., int...) {
+        super(..., ...);
+    }
+}
+class kamer3 extends Kamer {
+    public Vloer(String..., int...) {
+        super(..., ...);
+    }
+}
+class kamer4 extends Kamer {
+    public Vloer(String..., int...) {
+        super(..., ...);
+    }
+}
+class kamer5 extends Kamer {
+    public Vloer(String..., int...) {
+        super(..., ...);
+    }
+}class kamer6 extends Kamer {
+    public Vloer(String..., int...) {
+        super(..., ...);
+    }
+}
 
 class Spel{
     String Speler;

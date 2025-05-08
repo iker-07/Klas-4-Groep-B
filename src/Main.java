@@ -9,6 +9,32 @@ abstract class Kamer {
     String Opdracht;
     String Vragen;
 
+    public Kamer(String naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
+        this.Naam = Naam;
+        this.Beschrijving = Beschrijving;
+        this.Thema = Thema;
+        this.Opdracht = Opdracht;
+        this.Vragen = Vragen;
+
+    }
+
+    public String getNaam() {
+        return Naam;
+    }
+
+    public String getBeschrijving() {
+        return Beschrijving;
+    }
+    public String getThema() {
+        return Thema;
+    }
+    public String getOpdracht() {
+        return Opdracht;
+    }
+    public String getVragen() {
+        return Vragen;
+    }
+
 
 
 public void BinnenKomen() {
@@ -17,32 +43,32 @@ public void BinnenKomen() {
 
 }
 class kamer1 extends Kamer {
-    public Vloer(String..., int...) {
-        super(..., ...);
+    public kamer1(String Naam, String Beschrijving,String Thema, String Opdracht, String Vragen) {
+        super(Naam, Beschrijving, Thema, Opdracht, Vragen);
     }
 }
 class kamer2 extends Kamer {
-    public Vloer(String..., int...) {
-        super(..., ...);
+    public kamer2(String Naam, String Beschrijving,String Thema, String Opdracht, String Vragen) {
+        super(Naam, Beschrijving, Thema, Opdracht, Vragen);
     }
 }
 class kamer3 extends Kamer {
-    public Vloer(String..., int...) {
-        super(..., ...);
+    public kamer3(String Naam, String Beschrijving,String Thema, String Opdracht, String Vragen) {
+        super(Naam, Beschrijving, Thema, Opdracht, Vragen);
     }
 }
 class kamer4 extends Kamer {
-    public Vloer(String..., int...) {
-        super(..., ...);
+    public kamer4(String Naam, String Beschrijving,String Thema, String Opdracht, String Vragen) {
+        super(Naam, Beschrijving, Thema, Opdracht, Vragen);
     }
 }
 class kamer5 extends Kamer {
-    public Vloer(String..., int...) {
-        super(..., ...);
+    public kamer5(String Naam, String Beschrijving,String Thema, String Opdracht, String Vragen) {
+        super(Naam, Beschrijving, Thema, Opdracht, Vragen);
     }
 }class kamer6 extends Kamer {
-    public Vloer(String..., int...) {
-        super(..., ...);
+    public kamer6(String Naam, String Beschrijving,String Thema, String Opdracht, String Vragen) {
+        super(Naam, Beschrijving, Thema, Opdracht, Vragen);
     }
 }
 class Hub {

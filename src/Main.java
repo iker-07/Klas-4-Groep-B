@@ -9,7 +9,7 @@ abstract class Kamer {
     String Opdracht;
     String Vragen;
 
-    public Kamer(String naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
+    public Kamer(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
         this.Naam = Naam;
         this.Beschrijving = Beschrijving;
         this.Thema = Thema;

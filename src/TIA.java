@@ -1,5 +1,5 @@
-    class kamer6 extends Kamer {
-        public kamer6(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
+    class TIA extends Kamer {
+        public TIA(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
             super(Naam, Beschrijving, Thema, Opdracht, Vragen);
         }
 

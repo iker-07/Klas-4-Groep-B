@@ -23,11 +23,19 @@ class Spel {
         Kamer kamer = null;
         switch (keuze) {
             case 1:
-                kamer = new kamer1("Kamer 1", "Een mysterieuze kamer", "Mysterie", "Zoek de sleutel", "Wat is 2 + 2?");
+                kamer = new Sprintplanning("Sprintplanning", "Een mysterieuze kamer", "Mysterie", "Zoek de sleutel", "Wat is 2 + 2?");
                 break;
             case 2:
-                kamer = new kamer2("Kamer 2", "Een enge kamer", "Horror", "Ontsnap uit de kooi", "Wat is je grootste angst?");
+                kamer = new Dailyscrum("Dailyscrum", "Een enge kamer", "Horror", "Ontsnap uit de kooi", "Wat is je grootste angst?");
                 break;
+            case 3:
+                kamer = new Scrumboard("Scrumboard", "Een kamer", "een thema", "Opdracht", "vraag" );
+            case 4:
+                kamer = new Sprintreview("Sprintreview", "Een kamer", "een thema", "opdracht", "vraag");
+            case 5:
+                kamer = new Retrospective("Retrospective", "Een kamer", "een thema", "opdracht", "vraag ");
+            case 6:
+                kamer = new TIA("TIA", "een kamer", "een thema", "opdracht", "vraag");
             // Voeg de rest toe
             default:
                 System.out.println("Ongeldige keuze.");

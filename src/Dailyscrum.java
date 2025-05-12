@@ -1,5 +1,5 @@
-class kamer4 extends Kamer {
-    public kamer4(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
+class Dailyscrum extends Kamer {
+    public Dailyscrum(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
         super(Naam, Beschrijving, Thema, Opdracht, Vragen);
     }
 

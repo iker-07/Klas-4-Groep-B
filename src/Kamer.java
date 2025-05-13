@@ -15,14 +15,17 @@ public abstract class Kamer {
         this.Vragen = Vragen;
     }
 
-    public final void kamerMenu(Scanner scanner) {
+    public final boolean kamerMenu(Scanner scanner) {
         toonNaam();
         toonBeschrijving();
         voerOpdrachtUit();
+
         if (stelVragen(scanner)) {
             System.out.println("Je mag doorgaan naar de volgende kamer.");
+            return true;
         } else {
-            System.out.println("Je zit vast. Probeer opnieuw.");
+            System.out.println("Je moet de opdracht of alternatieve opdracht goed afronden om door te gaan.");
+            return false;
         }
     }
 

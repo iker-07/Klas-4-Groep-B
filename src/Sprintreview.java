@@ -1,5 +1,5 @@
-class kamer1 extends Kamer {
-    public kamer1(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
+class Sprintreview extends Kamer {
+    public Sprintreview(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
         super(Naam, Beschrijving, Thema, Opdracht, Vragen);
     }
 

@@ -16,7 +16,7 @@ public class Main {
             }
         }
 
-        System.out.println("\n🎉 Gefeliciteerd, je hebt alle kamers doorlopen!");
+        System.out.println("\n Gefeliciteerd, je hebt alle kamers doorlopen!");
         scanner.close();
     }
 }

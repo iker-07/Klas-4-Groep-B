@@ -1,6 +1,6 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-abstract class Kamer {
+import java.util.Scanner;
+
+public abstract class Kamer {
     String Naam;
     String Beschrijving;
     String Thema;
@@ -15,20 +15,19 @@ abstract class Kamer {
         this.Vragen = Vragen;
     }
 
-    // TEMPLATE METHOD
-    public final void kamerMenu() {
+    public final void kamerMenu(Scanner scanner) {
         toonNaam();
         toonBeschrijving();
         voerOpdrachtUit();
-        stelVragen();
+        if (stelVragen(scanner)) {
+            System.out.println("Je mag doorgaan naar de volgende kamer.");
+        } else {
+            System.out.println("Je zit vast. Probeer opnieuw.");
+        }
     }
 
-    // ABSTRACTE STAPPEN
     protected abstract void toonNaam();
-
     protected abstract void toonBeschrijving();
-
     protected abstract void voerOpdrachtUit();
-
-    protected abstract void stelVragen();
+    protected abstract boolean stelVragen(Scanner scanner);
 }

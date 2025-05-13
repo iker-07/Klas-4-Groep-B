@@ -1,4 +1,7 @@
-class kamer1 extends Kamer {
+import java.util.Scanner;
+
+public class kamer1 extends Kamer {
+
     public kamer1(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
         super(Naam, Beschrijving, Thema, Opdracht, Vragen);
     }
@@ -19,7 +22,21 @@ class kamer1 extends Kamer {
     }
 
     @Override
-    protected void stelVragen() {
-        System.out.println("Beantwoord de vraag: " + Vragen);
+    protected boolean stelVragen(Scanner scanner) {
+        System.out.println("Vraag: Wat is 2 + 2?");
+        System.out.println("a) 3\nb) 4\nc) 5\nd) 22");
+
+        String antwoord = scanner.nextLine().trim().toLowerCase();
+
+        if (antwoord.equals("b")) {
+            System.out.println("Correct antwoord!");
+            return true;
+        } else {
+            System.out.println("Fout antwoord! Een impediment (monster) verschijnt.");
+            new Monster().verschijnt(1);
+            return true;
+        }
     }
+
 }
+

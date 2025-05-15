@@ -8,7 +8,7 @@ public class Main {
         Set<Integer> voltooideKamers = new HashSet<>();
 
         while (voltooideKamers.size() < 5) {
-            System.out.print("Typ een commando (bijv. 'ga naar kamer x'): ");
+            System.out.print("Typ een commando (bijv.'ga naar kamer x'): ");
             String input = scanner.nextLine().trim().toLowerCase();
 
             if (input.startsWith("ga naar kamer")) {

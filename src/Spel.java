@@ -32,17 +32,17 @@ public class Spel {
     public static Kamer kiesKamer(int keuze) {
         switch (keuze) {
             case 1:
-                return new kamer1("Kamer 1", "Een mysterieuze kamer", "Scrum Event", "Zoek de sleutel", "Wat is 2 + 2?");
+                return new Retrospective("Kamer 1", "Een mysterieuze kamer", "Scrum Event", "Zoek de sleutel", "Wat is 2 + 2?");
             case 2:
-                return new kamer2("Kamer 2", "Sprint Planning", "Scrum Event", "Bepaal het Sprint Doel", "Wat gebeurt er tijdens Sprint Planning?");
+                return new Sprintplanning("Kamer 2", "Sprint Planning", "Scrum Event", "Bepaal het Sprint Doel", "Wat gebeurt er tijdens Sprint Planning?");
             case 3:
-                return new kamer3("Kamer 3", "Daily Scrum", "Scrum Event", "Geef een team update", "Hoe lang duurt een Daily Scrum?");
+                return new Dailyscrum("Kamer 3", "Daily Scrum", "Scrum Event", "Geef een team update", "Hoe lang duurt een Daily Scrum?");
             case 4:
-                return new kamer4("Kamer 4", "Sprint Review", "Scrum Event", "Laat je werk zien", "Wat is het doel van de Sprint Review?");
+                return new Sprintreview("Kamer 4", "Sprint Review", "Scrum Event", "Laat je werk zien", "Wat is het doel van de Sprint Review?");
             case 5:
-                return new kamer5("Kamer 5", "Scrum Master", "Scrum Rol", "Help het team", "Wat doet een Scrum Master?");
+                return new Scrumboard("Kamer 5", "Scrum Master", "Scrum Rol", "Help het team", "Wat doet een Scrum Master?");
             case 6:
-                return new kamer6("Finale Kamer", "Scrum Finale", "Scrum Overzicht", "Beantwoord finale vragen", "Wat is het doel van Scrum?");
+                return new TIA("Finale Kamer", "Scrum Finale", "Scrum Overzicht", "Beantwoord finale vragen", "Wat is het doel van Scrum?");
             default:
                 return null;
         }

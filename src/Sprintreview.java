@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class kamer1 extends Kamer {
+public class Sprintreview extends Kamer {
 
-    public kamer1(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
+    public Sprintreview(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
         super(Naam, Beschrijving, Thema, Opdracht, Vragen);
     }
 
@@ -18,13 +18,12 @@ public class kamer1 extends Kamer {
 
     @Override
     protected void voerOpdrachtUit() {
-        System.out.println("Opdracht uitvoeren: " + Opdracht);
+        System.out.println("Opdracht: " + Opdracht);
     }
 
-    @Override
     protected boolean stelVragen(Scanner scanner) {
-        System.out.println("Vraag: Wat is 2 + 2?");
-        System.out.println("a) 3\nb) 4\nc) 5\nd) 22");
+        System.out.println("Vraag: Wat is het doel van de Sprint Review?");
+        System.out.println("a) Teambuilding\nb) Werk demonstreren aan stakeholders\nc) Klanten bellen\nd) Vakantie bespreken");
 
         String antwoord = scanner.nextLine().trim().toLowerCase();
 
@@ -33,10 +32,8 @@ public class kamer1 extends Kamer {
             return true;
         } else {
             System.out.println("Fout antwoord! Een impediment (monster) verschijnt.");
-            new Monster().verschijnt(1);
+            new Monster().verschijnt(4);
             return true;
         }
     }
-
 }
-

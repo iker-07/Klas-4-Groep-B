@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class kamer3 extends Kamer {
+public class Sprintreview extends Kamer {
 
-    public kamer3(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
+    public Sprintreview(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
         super(Naam, Beschrijving, Thema, Opdracht, Vragen);
     }
 

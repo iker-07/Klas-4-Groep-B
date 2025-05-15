@@ -1,40 +1,28 @@
-import java.util.Scanner;
+import java.util.Map;
 public class TIA extends Kamer {
-    public TIA(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
-        super(Naam, Beschrijving, Thema, Opdracht, Vragen);
-    }
-    @Override
-    protected void toonNaam() {
-        System.out.println("Kamernaam: " + Naam);
-    }
-
-    @Override
-    protected void toonBeschrijving() {
-        System.out.println("Beschrijving: " + Beschrijving);
-    }
-
-    @Override
-    protected void voerOpdrachtUit() {
-        System.out.println("Opdracht uitvoeren: " + Opdracht);
+    public TIA() {
+        super(
+                "Team Improvement Area kamer",
+                "TIA",
+                "Scrum Improvement",
+                "Koppel scrum-termen aan hun betekenis",
+                new PuzzelVraagStrategie(Map.of(
+                        "De persoon die verantwoordelijk is voor het maximaliseren van de waarde van het product", "Product Owner",
+                        "Het ontwikkelteam dat verantwoordelijk is voor het opleveren van werkende software", "Development Team",
+                        "De facilitator van het Scrum-proces", "Scrum Master"
+                ))
+        );
     }
 
     @Override
-    protected boolean stelVragen(Scanner scanner) {
-        System.out.println("Vraag: Wat is een mogelijke betekenis van een TIA binnen de scrummethode?");
-        System.out.println("a) Een technische test voor het increment\nb) Een actiepunt om het teamproces te verbeteren\nc) Een deadline voor het opleveren van de sprint backlog\nd) Een extra rol naast de Scrum Master");
+    protected void toonNaam() { System.out.println("Kamernaam: " + Naam); }
 
-        String antwoord = scanner.nextLine().trim().toLowerCase();
-        if (antwoord.equals("b")) {
-            System.out.println("Correct antwoord!");
-            return true;
-        } else {
-            System.out.println("Fout antwoord! Een impediment (monster) verschijnt.");
-            new Monster().verschijnt(6);
-            return true;
-        }
-    }
+    @Override
+    protected void toonBeschrijving() { System.out.println("Beschrijving: " + Beschrijving); }
+
+    @Override
+    protected void voerOpdrachtUit() { System.out.println("Opdracht uitvoeren: " + Opdracht); }
+
+    @Override
+    protected int getKamerNummer() { return 6; }
 }
-
-
-
-

@@ -1,39 +1,32 @@
-import java.util.Scanner;
-
 public class Sprintreview extends Kamer {
-
-    public Sprintreview(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
-        super(Naam, Beschrijving, Thema, Opdracht, Vragen);
+    public Sprintreview() {
+        super(
+                "Sprint Review kamer",
+                "Sprint Review",
+                "Scrum Event",
+                "Bespreek het resultaat van de sprint",
+                new MeerkeuzeVraagStrategie(
+                        "Wat gebeurt er tijdens een Sprint Review?",
+                        new String[]{
+                                "a) Het team viert het afronden van de sprint met een feest",
+                                "b) Stakeholders worden geïnformeerd over het resultaat van de sprint",
+                                "c) De backlog wordt vernietigd",
+                                "d) De Scrum Master evalueert individuele prestaties"
+                        },
+                        "b"
+                )
+        );
     }
 
     @Override
-    protected void toonNaam() {
-        System.out.println("Kamernaam: " + Naam);
-    }
+    protected void toonNaam() { System.out.println("Kamernaam: " + Naam); }
 
     @Override
-    protected void toonBeschrijving() {
-        System.out.println("Beschrijving: " + Beschrijving);
-    }
+    protected void toonBeschrijving() { System.out.println("Beschrijving: " + Beschrijving); }
 
     @Override
-    protected void voerOpdrachtUit() {
-        System.out.println("Opdracht: " + Opdracht);
-    }
+    protected void voerOpdrachtUit() { System.out.println("Opdracht uitvoeren: " + Opdracht); }
 
-    protected boolean stelVragen(Scanner scanner) {
-        System.out.println("Vraag: Wat is het doel van de Sprint Review?");
-        System.out.println("a) Teambuilding\nb) Werk demonstreren aan stakeholders\nc) Klanten bellen\nd) Vakantie bespreken");
-
-        String antwoord = scanner.nextLine().trim().toLowerCase();
-
-        if (antwoord.equals("b")) {
-            System.out.println("Correct antwoord!");
-            return true;
-        } else {
-            System.out.println("Fout antwoord! Een impediment (monster) verschijnt.");
-            new Monster().verschijnt(4);
-            return true;
-        }
-    }
+    @Override
+    protected int getKamerNummer() { return 4; }
 }

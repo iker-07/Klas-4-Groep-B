@@ -1,41 +1,27 @@
-import java.util.Scanner;
-
+import java.util.Map;
 public class Sprintplanning extends Kamer {
-
-    public Sprintplanning(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
-        super(Naam, Beschrijving, Thema, Opdracht, Vragen);
+    public Sprintplanning() {
+        super(
+                "Sprint Planning kamer",
+                "Sprint Planning",
+                "Scrum Event",
+                "Koppel termen aan juiste uitleg",
+                new PuzzelVraagStrategie(Map.of(
+                        "Het moment waarop werk voor de sprint wordt geselecteerd", "Sprint Planning",
+                        "Het doel voor de aankomende sprint", "Sprint Doel"
+                ))
+        );
     }
 
     @Override
-    protected void toonNaam() {
-        System.out.println("Kamernaam: " + Naam);
-    }
+    protected void toonNaam() { System.out.println("Kamernaam: " + Naam); }
 
     @Override
-    protected void toonBeschrijving() {
-        System.out.println("Beschrijving: " + Beschrijving);
-    }
+    protected void toonBeschrijving() { System.out.println("Beschrijving: " + Beschrijving); }
 
     @Override
-    protected void voerOpdrachtUit() {
-        System.out.println("Opdracht uitvoeren: " + Opdracht);
-    }
+    protected void voerOpdrachtUit() { System.out.println("Opdracht uitvoeren: " + Opdracht); }
 
     @Override
-    protected boolean stelVragen(Scanner scanner) {
-        System.out.println("Vraag: Wat gebeurt er tijdens Sprint Planning?");
-        System.out.println("a) Je test het product\nb) Je maakt een planning voor de komende sprint\nc) Je levert het product op\nd) Je neemt vakantie");
-
-        String antwoord = scanner.nextLine().trim().toLowerCase();
-
-        if (antwoord.equals("b")) {
-            System.out.println("Correct antwoord!");
-            return true;
-        } else {
-            System.out.println("Fout antwoord! Een impediment (monster) verschijnt.");
-            new Monster().verschijnt(2);
-            return true;
-        }
-    }
-
+    protected int getKamerNummer() { return 2; }
 }

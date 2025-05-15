@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class Scrumboard extends Kamer {
+public class Scrumbord extends Kamer {
 
-    public Scrumboard(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
+    public Scrumbord(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
         super(Naam, Beschrijving, Thema, Opdracht, Vragen);
     }
 
@@ -23,8 +23,8 @@ public class Scrumboard extends Kamer {
 
     @Override
     protected boolean stelVragen(Scanner scanner) {
-        System.out.println("Vraag: Wat gebeurt er tijdens Sprint Planning?");
-        System.out.println("a) Je test het product\nb) Je maakt een planning voor de komende sprint\nc) Je levert het product op\nd) Je neemt vakantie");
+        System.out.println("Vraag: Wat is het hoofddoel van een scrumbord?");
+        System.out.println("a) Om de vergaderplanning van de Scrum Master te tonen\nb) Om de voortgang van het team visueel inzichtelijk te maken\nc) Om te bepalen wie welke vakantie krijgt\nd) Om klantfeedback te verzamelen");
 
         String antwoord = scanner.nextLine().trim().toLowerCase();
 
@@ -33,7 +33,7 @@ public class Scrumboard extends Kamer {
             return true;
         } else {
             System.out.println("Fout antwoord! Een impediment (monster) verschijnt.");
-            new Monster().verschijnt(2);
+            new Monster().verschijnt(1);
             return true;
         }
     }

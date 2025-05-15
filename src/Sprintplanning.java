@@ -18,12 +18,13 @@ public class Sprintplanning extends Kamer {
 
     @Override
     protected void voerOpdrachtUit() {
-        System.out.println("Opdracht: " + Opdracht);
+        System.out.println("Opdracht uitvoeren: " + Opdracht);
     }
 
+    @Override
     protected boolean stelVragen(Scanner scanner) {
-        System.out.println("Vraag: Wat is het doel van de Sprint Review?");
-        System.out.println("a) Teambuilding\nb) Werk demonstreren aan stakeholders\nc) Klanten bellen\nd) Vakantie bespreken");
+        System.out.println("Vraag: Wat gebeurt er tijdens Sprint Planning?");
+        System.out.println("a) Je test het product\nb) Je maakt een planning voor de komende sprint\nc) Je levert het product op\nd) Je neemt vakantie");
 
         String antwoord = scanner.nextLine().trim().toLowerCase();
 
@@ -32,8 +33,9 @@ public class Sprintplanning extends Kamer {
             return true;
         } else {
             System.out.println("Fout antwoord! Een impediment (monster) verschijnt.");
-            new Monster().verschijnt(4);
+            new Monster().verschijnt(2);
             return true;
         }
     }
+
 }

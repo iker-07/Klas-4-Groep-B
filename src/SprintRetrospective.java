@@ -1,6 +1,6 @@
 import java.util.Scanner;
-public class Retrospective extends Kamer {
-    public Retrospective(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
+public class SprintRetrospective extends Kamer {
+    public SprintRetrospective(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
         super(Naam, Beschrijving, Thema, Opdracht, Vragen);
     }
     @Override
@@ -20,11 +20,11 @@ public class Retrospective extends Kamer {
 
     @Override
     protected boolean stelVragen(Scanner scanner) {
-        System.out.println("Vraag: Wat doet een Scrum Master?");
-        System.out.println("a) Schrijft alle code\nb) Plant de vakantie van het team\nc) Helpt het team Scrum goed toe te passen\nd) Houdt vergaderingen");
+        System.out.println("Vraag: Wanneer vind een sprint retrospective plaats?");
+        System.out.println("a) Voor de sprint\nb) Na de sprint\nc) Tijdens de sprint");
 
         String antwoord = scanner.nextLine().trim().toLowerCase();
-        if (antwoord.equals("c")) {
+        if (antwoord.equals("b")) {
             System.out.println("Correct antwoord!");
             return true;
         } else {
@@ -36,7 +36,3 @@ public class Retrospective extends Kamer {
 
 
 }
-
-
-
-

@@ -18,24 +18,22 @@ public class Sprintreview extends Kamer {
 
     @Override
     protected void voerOpdrachtUit() {
-        System.out.println("Opdracht uitvoeren: " + Opdracht);
+        System.out.println("Opdracht: " + Opdracht);
     }
 
-    @Override
     protected boolean stelVragen(Scanner scanner) {
-        System.out.println("Vraag: Hoe lang duurt een Daily Scrum?");
-        System.out.println("a) 1 uur\nb) 30 minuten\nc) 15 minuten\nd) Zolang als nodig is");
+        System.out.println("Vraag: Wat is het doel van de Sprint Review?");
+        System.out.println("a) Teambuilding\nb) Werk demonstreren aan stakeholders\nc) Klanten bellen\nd) Vakantie bespreken");
 
         String antwoord = scanner.nextLine().trim().toLowerCase();
 
-        if (antwoord.equals("c")) {
+        if (antwoord.equals("b")) {
             System.out.println("Correct antwoord!");
             return true;
         } else {
             System.out.println("Fout antwoord! Een impediment (monster) verschijnt.");
-            new Monster().verschijnt(3);
+            new Monster().verschijnt(4);
             return true;
         }
     }
-
 }

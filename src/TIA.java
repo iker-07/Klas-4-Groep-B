@@ -20,11 +20,11 @@ public class TIA extends Kamer {
 
     @Override
     protected boolean stelVragen(Scanner scanner) {
-        System.out.println("Vraag: Wat is het doel van Scrum?");
-        System.out.println("a) Om zoveel mogelijk documenten te maken\nb) Om controle te houden\nc) Om waarde te leveren via werkende software\nd) Om dagelijks te vergaderen");
+        System.out.println("Vraag: Wat is een mogelijke betekenis van een TIA binnen de scrummethode?");
+        System.out.println("a) Een technische test voor het increment\nb) Een actiepunt om het teamproces te verbeteren\nc) Een deadline voor het opleveren van de sprint backlog\nd) Een extra rol naast de Scrum Master");
 
         String antwoord = scanner.nextLine().trim().toLowerCase();
-        if (antwoord.equals("c")) {
+        if (antwoord.equals("b")) {
             System.out.println("Correct antwoord!");
             return true;
         } else {
@@ -34,7 +34,3 @@ public class TIA extends Kamer {
         }
     }
 }
-
-
-
-

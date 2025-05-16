@@ -1,39 +1,27 @@
-import java.util.Scanner;
-
-public class kamer4 extends Kamer {
-
-    public kamer4(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
-        super(Naam, Beschrijving, Thema, Opdracht, Vragen);
+import java.util.Map;
+public class Sprintplanning extends Kamer {
+    public Sprintplanning() {
+        super(
+                "Sprint Planning kamer",
+                "Sprint Planning",
+                "Scrum Event",
+                "Koppel termen aan juiste uitleg",
+                new PuzzelVraagStrategie(Map.of(
+                        "Het moment waarop werk voor de sprint wordt geselecteerd", "Sprint Planning",
+                        "Het doel voor de aankomende sprint", "Sprint Doel"
+                ))
+        );
     }
 
     @Override
-    protected void toonNaam() {
-        System.out.println("Kamernaam: " + Naam);
-    }
+    protected void toonNaam() { System.out.println("Kamernaam: " + Naam); }
 
     @Override
-    protected void toonBeschrijving() {
-        System.out.println("Beschrijving: " + Beschrijving);
-    }
+    protected void toonBeschrijving() { System.out.println("Beschrijving: " + Beschrijving); }
 
     @Override
-    protected void voerOpdrachtUit() {
-        System.out.println("Opdracht: " + Opdracht);
-    }
+    protected void voerOpdrachtUit() { System.out.println("Opdracht uitvoeren: " + Opdracht); }
 
-    protected boolean stelVragen(Scanner scanner) {
-        System.out.println("Vraag: Wat is het doel van de Sprint Review?");
-        System.out.println("a) Teambuilding\nb) Werk demonstreren aan stakeholders\nc) Klanten bellen\nd) Vakantie bespreken");
-
-        String antwoord = scanner.nextLine().trim().toLowerCase();
-
-        if (antwoord.equals("b")) {
-            System.out.println("Correct antwoord!");
-            return true;
-        } else {
-            System.out.println("Fout antwoord! Een impediment (monster) verschijnt.");
-            new Monster().verschijnt(4);
-            return true;
-        }
-    }
+    @Override
+    protected int getKamerNummer() { return 2; }
 }

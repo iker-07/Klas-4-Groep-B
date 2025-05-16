@@ -5,29 +5,32 @@ public abstract class Kamer {
     String Beschrijving;
     String Thema;
     String Opdracht;
-    String Vragen;
+    protected VraagStrategie vraagStrategie;
 
-    public Kamer(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
+    public Kamer(String Naam, String Beschrijving, String Thema, String Opdracht, VraagStrategie vraagStrategie) {
         this.Naam = Naam;
         this.Beschrijving = Beschrijving;
         this.Thema = Thema;
         this.Opdracht = Opdracht;
-        this.Vragen = Vragen;
+        this.vraagStrategie = vraagStrategie;
     }
 
-    public final void kamerMenu(Scanner scanner) {
+    public final boolean kamerMenu(Scanner scanner) {
         toonNaam();
         toonBeschrijving();
         voerOpdrachtUit();
-        if (stelVragen(scanner)) {
+
+        if (vraagStrategie.stelVraag(scanner, getKamerNummer())) {
             System.out.println("Je mag doorgaan naar de volgende kamer.");
+            return true;
         } else {
-            System.out.println("Je zit vast. Probeer opnieuw.");
+            System.out.println("Je moet de opdracht goed afronden om door te gaan.");
+            return false;
         }
     }
 
     protected abstract void toonNaam();
     protected abstract void toonBeschrijving();
     protected abstract void voerOpdrachtUit();
-    protected abstract boolean stelVragen(Scanner scanner);
+    protected abstract int getKamerNummer(); // nodig voor Monster
 }

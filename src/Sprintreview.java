@@ -1,21 +1,24 @@
+import java.util.Map;
+
 public class Sprintreview extends Kamer {
+    private PuzzelEventManager eventManager;
+
     public Sprintreview() {
         super(
                 "Sprint Review kamer",
                 "Sprint Review",
                 "Scrum Event",
-                "Bespreek het resultaat van de sprint",
-                new MeerkeuzeVraagStrategie(
-                        "Wat gebeurt er tijdens een Sprint Review?",
-                        new String[]{
-                                "a) Het team viert het afronden van de sprint met een feest",
-                                "b) Stakeholders worden geïnformeerd over het resultaat van de sprint",
-                                "c) De backlog wordt vernietigd",
-                                "d) De Scrum Master evalueert individuele prestaties"
-                        },
-                        "b"
-                )
+                "Koppel termen aan juiste uitleg\n",
+                new PuzzelVraagStrategie(Map.of(
+                        "Feedback verzamelen op het sprintresultaat", "Sprint Review",
+                        "Demonstratie van opgeleverde functionaliteit", "Demo"
+                ))
         );
+
+        eventManager = new PuzzelEventManager();
+        eventManager.addObserver(new Deur());
+        eventManager.addObserver(new MonsterObserver());
+        eventManager.addObserver(new StatusDisplay());
     }
 
     @Override
@@ -25,7 +28,9 @@ public class Sprintreview extends Kamer {
     protected void toonBeschrijving() { System.out.println("Beschrijving: " + Beschrijving); }
 
     @Override
-    protected void voerOpdrachtUit() { System.out.println("Opdracht uitvoeren: " + Opdracht); }
+    protected void voerOpdrachtUit() {
+        System.out.println("Opdracht uitvoeren: " + Opdracht);
+    }
 
     @Override
     protected int getKamerNummer() { return 4; }

@@ -30,4 +30,3 @@ public class MeerkeuzeVraagStrategie implements VraagStrategie {
         }
     }
 }
-

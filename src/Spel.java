@@ -2,16 +2,24 @@ import java.util.Scanner;
 
 public class Spel {
     static String spelerNaam;
+    static Speler speler;
 
     public static void main(String[] args) {
+        DatabaseManager.initializeDatabase();
         StartGame();
         Scanner scanner = new Scanner(System.in);
 
         for (int kamerNummer = 1; kamerNummer <= 6; kamerNummer++) {
+            if (DatabaseManager.isKamerVoltooid(speler.getGamertag(), kamerNummer)) {
+                System.out.println("⏭️ Kamer " + kamerNummer + " is al voltooid. Sla over.");
+                continue;
+            }
+
             Kamer kamer = kiesKamer(kamerNummer);
             if (kamer != null) {
                 System.out.println("\n=== Je betreedt " + kamer.Naam + " ===");
                 kamer.kamerMenu(scanner);
+                DatabaseManager.markeerKamerAlsVoltooid(speler.getGamertag(), kamerNummer);
             } else {
                 System.out.println("Kamer " + kamerNummer + " bestaat niet. Spel wordt beëindigd.");
                 break;
@@ -23,10 +31,15 @@ public class Spel {
     }
 
     public static void StartGame() {
+        DatabaseManager.initializeDatabase();
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Vul je GamerTag in:");
-        spelerNaam = scanner.nextLine();
-        System.out.println("Welkom bij het Scrum Escape Spel, " + spelerNaam + "!");
+        System.out.print("Vul je GamerTag in: ");
+        String tag = scanner.nextLine();
+        spelerNaam = tag;
+        speler = new Speler(spelerNaam, "onbekend", spelerNaam);
+        System.out.println("Welkom terug, " + speler.getGamertag() + "!");
+        System.out.println("Huidige voortgang: " + speler.getVoortgang());
     }
 
     public static Kamer kiesKamer(int keuze) {

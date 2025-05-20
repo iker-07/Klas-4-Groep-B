@@ -1,17 +1,24 @@
 import java.util.Map;
+
 public class TIA extends Kamer {
+    private PuzzelEventManager eventManager;
+
     public TIA() {
         super(
-                "Team Improvement Area kamer",
+                "TIA kamer",
                 "TIA",
-                "Scrum Improvement",
-                "Koppel scrum-termen aan hun betekenis",
+                "Technologie",
+                "Koppel termen aan juiste uitleg\n",
                 new PuzzelVraagStrategie(Map.of(
-                        "De persoon die verantwoordelijk is voor het maximaliseren van de waarde van het product", "Product Owner",
-                        "Het ontwikkelteam dat verantwoordelijk is voor het opleveren van werkende software", "Development Team",
-                        "De facilitator van het Scrum-proces", "Scrum Master"
+                        "Technische informatie analyse", "TIA",
+                        "Diagnose en probleemoplossing", "Analyse"
                 ))
         );
+
+        eventManager = new PuzzelEventManager();
+        eventManager.addObserver(new Deur());
+        eventManager.addObserver(new MonsterObserver());
+        eventManager.addObserver(new StatusDisplay());
     }
 
     @Override
@@ -21,8 +28,10 @@ public class TIA extends Kamer {
     protected void toonBeschrijving() { System.out.println("Beschrijving: " + Beschrijving); }
 
     @Override
-    protected void voerOpdrachtUit() { System.out.println("Opdracht uitvoeren: " + Opdracht); }
+    protected void voerOpdrachtUit() {
+        System.out.println("Opdracht uitvoeren: " + Opdracht);
+    }
 
     @Override
-    protected int getKamerNummer() { return 6; }
+    protected int getKamerNummer() { return 7; }
 }

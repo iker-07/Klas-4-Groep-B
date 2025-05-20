@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Monster {
     public void verschijnt(int kamerNummer) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nEen impediment verschijnt!");
+        System.out.println("\nEen Monster verschijnt!");
 
         switch (kamerNummer) {
             case 1:
@@ -84,3 +84,4 @@ public class Monster {
         }
     }
 }
+

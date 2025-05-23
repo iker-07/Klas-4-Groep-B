@@ -1,26 +1,37 @@
-    class TIA extends Kamer {
-        public TIA(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
-            super(Naam, Beschrijving, Thema, Opdracht, Vragen);
-        }
+import java.util.Map;
 
-        @Override
-        protected void toonNaam() {
-            System.out.println("Kamernaam: " + Naam);
-        }
+public class TIA extends Kamer {
+    private PuzzelEventManager eventManager;
 
-        @Override
-        protected void toonBeschrijving() {
-            System.out.println("Beschrijving: " + Beschrijving);
-        }
+    public TIA() {
+        super(
+                "TIA kamer",
+                "TIA",
+                "Technologie",
+                "Koppel termen aan juiste uitleg\n",
+                new PuzzelVraagStrategie(Map.of(
+                        "Technische informatie analyse", "TIA",
+                        "Diagnose en probleemoplossing", "Analyse"
+                ))
+        );
 
-        @Override
-        protected void voerOpdrachtUit() {
-            System.out.println("Opdracht uitvoeren: " + Opdracht);
-        }
-
-        @Override
-        protected void stelVragen() {
-            System.out.println("Beantwoord de vraag: " + Vragen);
-        }
+        eventManager = new PuzzelEventManager();
+        eventManager.addObserver(new Deur());
+        eventManager.addObserver(new MonsterObserver());
+        eventManager.addObserver(new StatusDisplay());
     }
 
+    @Override
+    protected void toonNaam() { System.out.println("Kamernaam: " + Naam); }
+
+    @Override
+    protected void toonBeschrijving() { System.out.println("Beschrijving: " + Beschrijving); }
+
+    @Override
+    protected void voerOpdrachtUit() {
+        System.out.println("Opdracht uitvoeren: " + Opdracht);
+    }
+
+    @Override
+    protected int getKamerNummer() { return 7; }
+}

@@ -1,17 +1,17 @@
 import java.util.Map;
 
-public class Sprintreview extends Kamer {
+public class SprintRetrospective extends Kamer {
     private PuzzelEventManager eventManager;
 
-    public Sprintreview() {
+    public SprintRetrospective() {
         super(
-                "Sprint Review kamer",
-                "Sprint Review",
+                "Sprint Retrospective kamer",
+                "Sprint Retrospective",
                 "Scrum Event",
                 "Koppel termen aan juiste uitleg\n",
                 new PuzzelVraagStrategie(Map.of(
-                        "Feedback verzamelen op het sprintresultaat", "Sprint Review",
-                        "Demonstratie van opgeleverde functionaliteit", "Demo"
+                        "Moment om terug te kijken op het proces", "Sprint Retrospective",
+                        "Verbeteringen voor de volgende sprint", "Actiepunten"
                 ))
         );
 
@@ -33,5 +33,5 @@ public class Sprintreview extends Kamer {
     }
 
     @Override
-    protected int getKamerNummer() { return 4; }
+    protected int getKamerNummer() { return 5; }
 }

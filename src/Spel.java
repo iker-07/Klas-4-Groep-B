@@ -1,47 +1,50 @@
 import java.util.Scanner;
 
-class Spel {
-    String Speler;
-    String Hub;
-    String Kamer;
+public class Spel {
+    static String spelerNaam;
 
-
-    public static void StartGame() {
-        System.out.println("vul je GamerTag in:");
-        Scanner GamerTag = new Scanner(System.in);
-        String Naam = GamerTag.nextLine();
-        System.out.println("Naam: " + Naam);
-
-
-    }
-
-    public static void KiesKamer() {
-        System.out.println("Kies een kamer (1-6):");
+    public static void main(String[] args) {
+        StartGame();
         Scanner scanner = new Scanner(System.in);
-        int keuze = scanner.nextInt();
 
-        Kamer kamer = null;
-        switch (keuze) {
-            case 1:
-                kamer = new Sprintplanning("Sprintplanning", "Een mysterieuze kamer", "Mysterie", "Zoek de sleutel", "Wat is 2 + 2?");
+        for (int kamerNummer = 1; kamerNummer <= 6; kamerNummer++) {
+            Kamer kamer = kiesKamer(kamerNummer);
+            if (kamer != null) {
+                System.out.println("\n=== Je betreedt " + kamer.Naam + " ===");
+                kamer.kamerMenu(scanner);
+            } else {
+                System.out.println("Kamer " + kamerNummer + " bestaat niet. Spel wordt beëindigd.");
                 break;
-            case 2:
-                kamer = new Dailyscrum("Dailyscrum", "Een enge kamer", "Horror", "Ontsnap uit de kooi", "Wat is je grootste angst?");
-                break;
-            case 3:
-                kamer = new Scrumboard("Scrumboard", "Een kamer", "een thema", "Opdracht", "vraag" );
-            case 4:
-                kamer = new Sprintreview("Sprintreview", "Een kamer", "een thema", "opdracht", "vraag");
-            case 5:
-                kamer = new Retrospective("Retrospective", "Een kamer", "een thema", "opdracht", "vraag ");
-            case 6:
-                kamer = new TIA("TIA", "een kamer", "een thema", "opdracht", "vraag");
-            // Voeg de rest toe
-            default:
-                System.out.println("Ongeldige keuze.");
-                return;
+            }
         }
 
-        kamer.kamerMenu();  // Template method uitvoeren
+        System.out.println("\nGefeliciteerd " + spelerNaam + ", je hebt alle kamers doorlopen!");
+        scanner.close();
+    }
+
+    public static void StartGame() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Vul je GamerTag in:");
+        spelerNaam = scanner.nextLine();
+        System.out.println("Welkom bij het Scrum Escape Spel, " + spelerNaam + "!");
+    }
+
+    public static Kamer kiesKamer(int keuze) {
+        switch (keuze) {
+            case 1:
+                return new Scrumbord();
+            case 2:
+                return new Sprintplanning();
+            case 3:
+                return new DailyScrum(); // Pas deze ook aan met strategie
+            case 4:
+                return new Sprintreview(); // idem
+            case 5:
+                return new SprintRetrospective(); // idem
+            case 6:
+                return new TIA(); // idem
+            default:
+                return null;
+        }
     }
 }

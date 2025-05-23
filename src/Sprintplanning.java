@@ -2,17 +2,10 @@ import java.util.Map;
 
 public class Sprintplanning extends Kamer {
     public Sprintplanning(HintProviderFactory hintProviderFactory) {
-        super(
-                "Sprint Planning kamer",
-                "Sprint Planning",
-                "Scrum Event",
-                "Koppel termen aan juiste uitleg",
+        super("Sprint Planning kamer", "Sprint Planning", "Scrum Event", "Koppel termen aan juiste uitleg",
                 new PuzzelVraagStrategie(
-                        Map.of(
-                                "Sprint doelen bepalen", "Sprint Planning",
-                                "Taken inschatten en plannen", "Sprint Planning"
-                        ),
-                        hintProviderFactory
+                        Map.of("Sprint doelen bepalen", "Sprint Planning", "Taken inschatten en plannen", "Sprint Planning"
+                        ), hintProviderFactory
                 ),
                 new HintService(hintProviderFactory, 2)
         );

@@ -2,17 +2,10 @@ import java.util.Map;
 
 public class TIA extends Kamer {
     public TIA(HintProviderFactory hintProviderFactory) {
-        super(
-                "Technische Informatie Analyse kamer",
-                "TIA",
-                "Analyse",
-                "Koppel termen aan juiste uitleg",
+        super("Technische Informatie Analyse kamer", "TIA", "Analyse", "Koppel termen aan juiste uitleg",
                 new PuzzelVraagStrategie(
-                        Map.of(
-                                "Probleem grondig analyseren", "TIA",
-                                "Technische oorzaak achterhalen", "TIA"
-                        ),
-                        hintProviderFactory
+                        Map.of("Probleem grondig analyseren", "TIA", "Technische oorzaak achterhalen", "TIA"
+                        ), hintProviderFactory
                 ),
                 new HintService(hintProviderFactory, 6)
         );

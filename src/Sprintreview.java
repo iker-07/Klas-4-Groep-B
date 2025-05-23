@@ -2,17 +2,10 @@ import java.util.Map;
 
 public class Sprintreview extends Kamer {
     public Sprintreview(HintProviderFactory hintProviderFactory) {
-        super(
-                "Sprint Review kamer",
-                "Sprint Review",
-                "Scrum Event",
-                "Koppel termen aan juiste uitleg",
+        super("Sprint Review kamer", "Sprint Review", "Scrum Event", "Koppel termen aan juiste uitleg",
                 new PuzzelVraagStrategie(
-                        Map.of(
-                                "Feedback verzamelen op het sprintresultaat", "Sprint Review",
-                                "Demonstratie van opgeleverde functionaliteit", "Demo"
-                        ),
-                        hintProviderFactory
+                        Map.of("Feedback verzamelen op het sprintresultaat", "Sprint Review", "Demonstratie van opgeleverde functionaliteit", "Demo"
+                        ), hintProviderFactory
                 ),
                 new HintService(hintProviderFactory, 4)
         );

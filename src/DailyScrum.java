@@ -5,7 +5,8 @@ public class DailyScrum extends Kamer {
         super("Daily Scrum kamer", "Daily Scrum", "Scrum Event", "Koppel termen aan juiste uitleg",
                 new PuzzelVraagStrategie(
                         Map.of("Dagelijkse team synchronisatie", "Daily Scrum", "Maximale duur 15 minuten", "Daily Scrum"
-                        ), hintProviderFactory
+                        ),
+                        hintProviderFactory
                 ),
                 new HintService(hintProviderFactory, 1)
         );

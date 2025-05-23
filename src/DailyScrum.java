@@ -22,10 +22,14 @@ public class DailyScrum extends Kamer {
     }
 
     @Override
-    protected void toonNaam() { System.out.println("Kamernaam: " + Naam); }
+    protected void toonNaam() {
+        System.out.println("Kamernaam: " + Naam);
+    }
 
     @Override
-    protected void toonBeschrijving() { System.out.println("Beschrijving: " + Beschrijving); }
+    protected void toonBeschrijving() {
+        System.out.println("Beschrijving: " + Beschrijving);
+    }
 
     @Override
     protected void voerOpdrachtUit() {

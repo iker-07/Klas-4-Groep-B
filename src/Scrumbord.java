@@ -10,7 +10,7 @@ public class Scrumbord extends Kamer {
                 "Scrum Tool",
                 "Koppel termen aan juiste uitleg\n",
                 new PuzzelVraagStrategie(Map.of(
-                        "Visuele weergave van taken", "Scrum Bord",
+                        "Visuele weergave van taken ", "Scrum Bord",
                         "Taken in kolommen: To Do, In Progress, Done", "Workflow"
                 ))
         );

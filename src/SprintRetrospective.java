@@ -2,17 +2,10 @@ import java.util.Map;
 
 public class SprintRetrospective extends Kamer {
     public SprintRetrospective(HintProviderFactory hintProviderFactory) {
-        super(
-                "Sprint Retrospective kamer",
-                "Sprint Retrospective",
-                "Scrum Event",
-                "Koppel termen aan juiste uitleg",
+        super("Sprint Retrospective kamer", "Sprint Retrospective", "Scrum Event", "Koppel termen aan juiste uitleg",
                 new PuzzelVraagStrategie(
-                        Map.of(
-                                "Verbeterpunten bespreken", "Sprint Retrospective",
-                                "Team feedback verzamelen", "Sprint Retrospective"
-                        ),
-                        hintProviderFactory
+                        Map.of("Verbeterpunten bespreken", "Sprint Retrospective", "Team feedback verzamelen", "Sprint Retrospective"
+                        ), hintProviderFactory
                 ),
                 new HintService(hintProviderFactory, 3)
         );

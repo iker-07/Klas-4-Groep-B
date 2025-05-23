@@ -2,17 +2,10 @@ import java.util.Map;
 
 public class DailyScrum extends Kamer {
     public DailyScrum(HintProviderFactory hintProviderFactory) {
-        super(
-                "Daily Scrum kamer",
-                "Daily Scrum",
-                "Scrum Event",
-                "Koppel termen aan juiste uitleg",
+        super("Daily Scrum kamer", "Daily Scrum", "Scrum Event", "Koppel termen aan juiste uitleg",
                 new PuzzelVraagStrategie(
-                        Map.of(
-                                "Dagelijkse team synchronisatie", "Daily Scrum",
-                                "Maximale duur 15 minuten", "Daily Scrum"
-                        ),
-                        hintProviderFactory
+                        Map.of("Dagelijkse team synchronisatie", "Daily Scrum", "Maximale duur 15 minuten", "Daily Scrum"
+                        ), hintProviderFactory
                 ),
                 new HintService(hintProviderFactory, 1)
         );

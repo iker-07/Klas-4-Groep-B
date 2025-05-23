@@ -2,17 +2,10 @@ import java.util.Map;
 
 public class Scrumbord extends Kamer {
     public Scrumbord(HintProviderFactory hintProviderFactory) {
-        super(
-                "ScrumBoard kamer",
-                "ScrumBoard",
-                "Scrum Artefact",
-                "Koppel termen aan juiste uitleg",
+        super("ScrumBoard kamer", "ScrumBoard", "Scrum Artefact", "Koppel termen aan juiste uitleg",
                 new PuzzelVraagStrategie(
-                        Map.of(
-                                "Visualiseert taken en voortgang", "ScrumBoard",
-                                "Wordt bijgehouden tijdens sprint", "ScrumBoard"
-                        ),
-                        hintProviderFactory
+                        Map.of("Visualiseert taken en voortgang", "ScrumBoard", "Wordt bijgehouden tijdens sprint", "ScrumBoard"
+                        ), hintProviderFactory
                 ),
                 new HintService(hintProviderFactory, 5)
         );

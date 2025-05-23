@@ -1,24 +1,21 @@
 import java.util.Map;
 
 public class Scrumbord extends Kamer {
-    private PuzzelEventManager eventManager;
-
-    public Scrumbord() {
+    public Scrumbord(HintProviderFactory hintProviderFactory) {
         super(
-                "Scrum Bord kamer",
-                "Scrum Bord",
-                "Scrum Tool",
-                "Koppel termen aan juiste uitleg\n",
-                new PuzzelVraagStrategie(Map.of(
-                        "Visuele weergave van taken ", "Scrum Bord",
-                        "Taken in kolommen: To Do, In Progress, Done", "Workflow"
-                ))
+                "ScrumBoard kamer",
+                "ScrumBoard",
+                "Scrum Artefact",
+                "Koppel termen aan juiste uitleg",
+                new PuzzelVraagStrategie(
+                        Map.of(
+                                "Visualiseert taken en voortgang", "ScrumBoard",
+                                "Wordt bijgehouden tijdens sprint", "ScrumBoard"
+                        ),
+                        hintProviderFactory
+                ),
+                new HintService(hintProviderFactory, 5)
         );
-
-        eventManager = new PuzzelEventManager();
-        eventManager.addObserver(new Deur());
-        eventManager.addObserver(new MonsterObserver());
-        eventManager.addObserver(new StatusDisplay());
     }
 
     @Override
@@ -28,10 +25,8 @@ public class Scrumbord extends Kamer {
     protected void toonBeschrijving() { System.out.println("Beschrijving: " + Beschrijving); }
 
     @Override
-    protected void voerOpdrachtUit() {
-        System.out.println("Opdracht uitvoeren: " + Opdracht);
-    }
+    protected void voerOpdrachtUit() { System.out.println("Opdracht uitvoeren: " + Opdracht); }
 
     @Override
-    protected int getKamerNummer() { return 6; }
+    protected int getKamerNummer() { return 5; }
 }

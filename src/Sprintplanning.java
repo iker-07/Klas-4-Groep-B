@@ -8,7 +8,7 @@ public class Sprintplanning extends Kamer {
                 "Sprint Planning kamer",
                 "Sprint Planning",
                 "Scrum Event",
-                "Koppel termen aan juiste uitleg\n",
+                "Koppel termen aan juiste uitleg\nSprint",
                 new PuzzelVraagStrategie(Map.of(
                         "Het moment waarop werk voor de sprint wordt geselecteerd", "Sprint Planning",
                         "Het doel voor de aankomende sprint", "Sprint Doel"

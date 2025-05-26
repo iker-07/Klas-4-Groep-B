@@ -1,3 +1,4 @@
+
 public class Deur implements Observer {
     @Override
     public void correctAntwoord() {

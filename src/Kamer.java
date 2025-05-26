@@ -1,18 +1,20 @@
 import java.util.Scanner;
 
 public abstract class Kamer {
-    String Naam;
-    String Beschrijving;
-    String Thema;
-    String Opdracht;
+    protected String Naam;
+    protected String Beschrijving;
+    protected String Type;
+    protected String Opdracht;
     protected VraagStrategie vraagStrategie;
+    protected HintService hintService;
 
-    public Kamer(String Naam, String Beschrijving, String Thema, String Opdracht, VraagStrategie vraagStrategie) {
-        this.Naam = Naam;
-        this.Beschrijving = Beschrijving;
-        this.Thema = Thema;
-        this.Opdracht = Opdracht;
+    public Kamer(String naam, String beschrijving, String type, String opdracht, VraagStrategie vraagStrategie, HintService hintService) {
+        this.Naam = naam;
+        this.Beschrijving = beschrijving;
+        this.Type = type;
+        this.Opdracht = opdracht;
         this.vraagStrategie = vraagStrategie;
+        this.hintService = hintService;
     }
 
     public final boolean kamerMenu(Scanner scanner) {
@@ -20,17 +22,24 @@ public abstract class Kamer {
         toonBeschrijving();
         voerOpdrachtUit();
 
-        if (vraagStrategie.stelVraag(scanner, getKamerNummer())) {
-            System.out.println("Je mag doorgaan naar de volgende kamer.");
-            return true;
-        } else {
-            System.out.println("Je moet de opdracht goed afronden om door te gaan.");
-            return false;
+        boolean correct = vraagStrategie.stelVraag(scanner, getKamerNummer());
+        while (!correct) {
+            System.out.println("Fout antwoord.");
+            System.out.print("Wil je een hint? (ja/nee): ");
+            String keuze = scanner.nextLine().trim().toLowerCase();
+            if (keuze.equals("ja")) {
+                System.out.println("Hint: " + hintService.getHint());
+            }
+            // Vraag opnieuw
+            correct = vraagStrategie.stelVraag(scanner, getKamerNummer());
         }
+
+        System.out.println("Je mag doorgaan naar de volgende kamer.");
+        return true;
     }
 
     protected abstract void toonNaam();
     protected abstract void toonBeschrijving();
     protected abstract void voerOpdrachtUit();
-    protected abstract int getKamerNummer(); // nodig voor Monster
+    protected abstract int getKamerNummer();
 }

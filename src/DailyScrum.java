@@ -1,26 +1,35 @@
-import java.util.Map;
-
 public class DailyScrum extends Kamer {
     public DailyScrum(HintProviderFactory hintProviderFactory) {
-        super("Daily Scrum kamer", "Daily Scrum", "Scrum Event", "Koppel termen aan juiste uitleg",
-                new PuzzelVraagStrategie(
-                        Map.of("Dagelijkse team synchronisatie", "Daily Scrum", "Maximale duur 15 minuten", "Daily Scrum"
-                        ),
-                        hintProviderFactory
+        super(
+                "Daily Scrum kamer",
+                "Daily Scrum",
+                "Scrum Event",
+                "Koppel termen aan juiste uitleg",
+                new OpenVraagStrategie(
+                        "Wat gebeurt er tijdens een Daily Scrum?",
+                        "Het team stemt dagelijks werk af"
                 ),
                 new HintService(hintProviderFactory, 1)
         );
     }
 
     @Override
-    protected void toonNaam() { System.out.println("Kamernaam: " + Naam); }
+    protected void toonNaam() {
+        System.out.println("Kamernaam: " + Naam);
+    }
 
     @Override
-    protected void toonBeschrijving() { System.out.println("Beschrijving: " + Beschrijving); }
+    protected void toonBeschrijving() {
+        System.out.println("Beschrijving: " + Beschrijving);
+    }
 
     @Override
-    protected void voerOpdrachtUit() { System.out.println("Opdracht uitvoeren: " + Opdracht); }
+    protected void voerOpdrachtUit() {
+        System.out.println("Opdracht uitvoeren: " + Opdracht);
+    }
 
     @Override
-    protected int getKamerNummer() { return 1; }
+    protected int getKamerNummer() {
+        return 1;
+    }
 }

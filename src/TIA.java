@@ -18,8 +18,12 @@ public class TIA extends Kamer {
     protected void toonBeschrijving() { System.out.println("Beschrijving: " + Beschrijving); }
 
     @Override
-    protected void voerOpdrachtUit() { System.out.println("Opdracht uitvoeren: " + Opdracht); }
+    protected void voerOpdrachtUit() {
+        System.out.println("Opdracht uitvoeren: " + Opdracht);
+    }
 
     @Override
-    protected int getKamerNummer() { return 6; }
+    protected int getKamerNummer() {
+        return 6;
+    }
 }

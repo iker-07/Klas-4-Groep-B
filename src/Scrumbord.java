@@ -12,14 +12,22 @@ public class Scrumbord extends Kamer {
     }
 
     @Override
-    protected void toonNaam() { System.out.println("Kamernaam: " + Naam); }
+    protected void toonNaam() {
+        System.out.println("Kamernaam: " + Naam);
+    }
 
     @Override
-    protected void toonBeschrijving() { System.out.println("Beschrijving: " + Beschrijving); }
+    protected void toonBeschrijving() {
+        System.out.println("Beschrijving: " + Beschrijving);
+    }
 
     @Override
-    protected void voerOpdrachtUit() { System.out.println("Opdracht uitvoeren: " + Opdracht); }
+    protected void voerOpdrachtUit() {
+        System.out.println("Opdracht uitvoeren: " + Opdracht);
+    }
 
     @Override
-    protected int getKamerNummer() { return 5; }
+    protected int getKamerNummer() {
+        return 5;
+    }
 }

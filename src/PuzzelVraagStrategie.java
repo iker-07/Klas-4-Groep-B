@@ -1,31 +1,24 @@
-import java.util.*;
+import java.util.Map;
+import java.util.Scanner;
 
 public class PuzzelVraagStrategie implements VraagStrategie {
-    private final Map<String, String> definitiesEnTermen;
+    private final Map<String, String> vragenEnAntwoorden;
+    private final HintProviderFactory hintProviderFactory;
 
-    public PuzzelVraagStrategie(Map<String, String> definitiesEnTermen) {
-        this.definitiesEnTermen = definitiesEnTermen;
+    public PuzzelVraagStrategie(Map<String, String> vragenEnAntwoorden, HintProviderFactory hintProviderFactory) {
+        this.vragenEnAntwoorden = vragenEnAntwoorden;
+        this.hintProviderFactory = hintProviderFactory;
     }
 
     @Override
     public boolean stelVraag(Scanner scanner, int kamerNummer) {
-        int juist = 0;
-        for (String definitie : definitiesEnTermen.keySet()) {
-            System.out.println("Definitie: " + definitie);
-            System.out.print("Jouw antwoord: ");
-            String antwoord = scanner.nextLine().trim().toLowerCase();
-            if (antwoord.equals(definitiesEnTermen.get(definitie).toLowerCase())) {
-                juist++;
+        for (Map.Entry<String, String> entry : vragenEnAntwoorden.entrySet()) {
+            System.out.println("Wat hoort bij: " + entry.getKey());
+            String antwoord = scanner.nextLine().trim();
+            if (!antwoord.equalsIgnoreCase(entry.getValue())) {
+                return false; // Fout antwoord
             }
         }
-
-        if (juist == definitiesEnTermen.size()) {
-            System.out.println("Alle termen correct gematcht!");
-            return true;
-        } else {
-            System.out.println("Sommige antwoorden waren fout. Een monster verschijnt.");
-            new Monster().verschijnt(kamerNummer);
-            return true;
-        }
+        return true; // Alle antwoorden correct
     }
 }

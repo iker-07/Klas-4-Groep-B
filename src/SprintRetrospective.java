@@ -1,24 +1,14 @@
 import java.util.Map;
 
 public class SprintRetrospective extends Kamer {
-    private PuzzelEventManager eventManager;
-
-    public SprintRetrospective() {
-        super(
-                "Sprint Retrospective kamer",
-                "Sprint Retrospective",
-                "Scrum Event",
-                "Koppel termen aan juiste uitleg\n",
-                new PuzzelVraagStrategie(Map.of(
-                        "Moment om terug te kijken op het proces", "Sprint Retrospective",
-                        "Verbeteringen voor de volgende sprint", "Actiepunten"
-                ))
+    public SprintRetrospective(HintProviderFactory hintProviderFactory) {
+        super("Sprint Retrospective kamer", "Sprint Retrospective", "Scrum Event", "Koppel termen aan juiste uitleg",
+                new PuzzelVraagStrategie(
+                        Map.of("Verbeterpunten bespreken", "Sprint Retrospective", "Team feedback verzamelen", "Sprint Retrospective"
+                        ), hintProviderFactory
+                ),
+                new HintService(hintProviderFactory, 3)
         );
-
-        eventManager = new PuzzelEventManager();
-        eventManager.addObserver(new Deur());
-        eventManager.addObserver(new MonsterObserver());
-        eventManager.addObserver(new StatusDisplay());
     }
 
     @Override
@@ -28,10 +18,8 @@ public class SprintRetrospective extends Kamer {
     protected void toonBeschrijving() { System.out.println("Beschrijving: " + Beschrijving); }
 
     @Override
-    protected void voerOpdrachtUit() {
-        System.out.println("Opdracht uitvoeren: " + Opdracht);
-    }
+    protected void voerOpdrachtUit() { System.out.println("Opdracht uitvoeren: " + Opdracht); }
 
     @Override
-    protected int getKamerNummer() { return 5; }
+    protected int getKamerNummer() { return 3; }
 }

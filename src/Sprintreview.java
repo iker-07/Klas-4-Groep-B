@@ -1,9 +1,24 @@
-import java.util.Scanner;
+import java.util.Map;
 
 public class Sprintreview extends Kamer {
-
-    public Sprintreview(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
-        super(Naam, Beschrijving, Thema, Opdracht, Vragen);
+    public Sprintreview(HintProviderFactory hintProviderFactory) {
+        super(
+                "Sprint Review kamer",
+                "Sprint Review",
+                "Scrum Event",
+                "Koppel termen aan juiste uitleg",
+                new MeerkeuzeVraagStrategie(
+                        "Wat gebeurt er tijdens de Sprint Review?",
+                        new String[] {
+                                "Het sprintresultaat wordt gedemonstreerd",
+                                "De sprint wordt geëvalueerd",
+                                "Het team plant de volgende sprint",
+                                "Er wordt gewerkt aan het sprintdoel"
+                        },
+                        "Het sprintresultaat wordt gedemonstreerd"
+                ),
+                new HintService(hintProviderFactory, 4)
+        );
     }
 
     @Override
@@ -22,20 +37,7 @@ public class Sprintreview extends Kamer {
     }
 
     @Override
-    protected boolean stelVragen(Scanner scanner) {
-        System.out.println("Vraag: Hoe lang duurt een Daily Scrum?");
-        System.out.println("a) 1 uur\nb) 30 minuten\nc) 15 minuten\nd) Zolang als nodig is");
-
-        String antwoord = scanner.nextLine().trim().toLowerCase();
-
-        if (antwoord.equals("c")) {
-            System.out.println("Correct antwoord!");
-            return true;
-        } else {
-            System.out.println("Fout antwoord! Een impediment (monster) verschijnt.");
-            new Monster().verschijnt(3);
-            return true;
-        }
+    protected int getKamerNummer() {
+        return 4;
     }
-
 }

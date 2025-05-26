@@ -3,49 +3,67 @@ import java.util.Scanner;
 public class Monster {
     public void verschijnt(int kamerNummer) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nEen impediment verschijnt!");
+        System.out.println("\nEen Monster verschijnt!");
 
         switch (kamerNummer) {
             case 1:
-                System.out.println("Blokkade: Je begrijpt de basis van rekenen niet goed.");
-                System.out.println("Alternatieve vraag: Wat is 3 + 3?");
-                System.out.println("a) 5\nb) 6\nc) 7\nd) 33");
+                System.out.println("Blokkade: Je snapt het nut van een scrumbord niet.");
+                System.out.println("Alternatieve vraag: Waarvoor wordt een scrumbord gebruikt?");
+                System.out.println("a) Voor het bijhouden van persoonlijke doelen");
+                System.out.println("b) Voor het organiseren van taken binnen het Scrumteam");
+                System.out.println("c) Voor het meten van klanttevredenheid");
+                System.out.println("d) Voor het documenteren van de sprintreview");
                 if (wachtOpAntwoord(scanner, "b")) return;
                 break;
 
             case 2:
                 System.out.println("Blokkade: Je weet niet precies wat er gebeurt tijdens Sprint Planning.");
-                System.out.println("Alternatieve vraag: Wie bepaalt het Sprintdoel?");
-                System.out.println("a) De Scrum Master\nb) De Product Owner samen met het team\nc) De CEO\nd) De developers alleen");
-                if (wachtOpAntwoord(scanner, "b")) return;
+                System.out.println("Alternatieve vraag: Wat is het doel van de Sprint Planning?");
+                System.out.println("a) Een lijst met bugs verzamelen");
+                System.out.println("b) Het team instrueren over hun werktijden");
+                System.out.println("c) Samen het werk plannen en een Sprint Doel vaststellen");
+                System.out.println("d) Feedback verzamelen van stakeholders");
+                if (wachtOpAntwoord(scanner, "c")) return;
                 break;
 
             case 3:
                 System.out.println("Blokkade: Je weet niet hoe lang een Daily Scrum duurt.");
-                System.out.println("Alternatieve vraag: Wat is het doel van de Daily Scrum?");
-                System.out.println("a) Klagen over problemen\nb) Plannen van de volgende Sprint\nc) Afstemmen over voortgang\nd) Koffie drinken");
+                System.out.println("Alternatieve vraag: Wie leidt de Daily Scrum?");
+                System.out.println("a) De Scrum Master");
+                System.out.println("b) De Product Owner");
+                System.out.println("c) De developers zelf");
+                System.out.println("d) De projectmanager");
                 if (wachtOpAntwoord(scanner, "c")) return;
                 break;
 
             case 4:
                 System.out.println("Blokkade: Je weet niet wat het doel is van de Sprint Review.");
-                System.out.println("Alternatieve vraag: Wie wordt uitgenodigd voor de Sprint Review?");
-                System.out.println("a) Alleen developers\nb) Scrum Master en Product Owner\nc) Stakeholders en team\nd) Alleen de klant");
-                if (wachtOpAntwoord(scanner, "c")) return;
+                System.out.println("Alternatieve vraag: Wat toont het team tijdens de Sprint Review?");
+                System.out.println("a) De volledige backlog");
+                System.out.println("b) De technische documentatie");
+                System.out.println("c) De voortgangsgrafiek");
+                System.out.println("d) Het werk dat tijdens de sprint is voltooid");
+                if (wachtOpAntwoord(scanner, "d")) return;
                 break;
 
             case 5:
-                System.out.println("Blokkade: Je weet niet precies wat een Scrum Master doet.");
-                System.out.println("Alternatieve vraag: Wat is de rol van de Scrum Master?");
-                System.out.println("a) Controle uitvoeren op planning\nb) Team helpen obstakels te verwijderen\nc) Taken toewijzen\nd) Backlog beheren");
-                if (wachtOpAntwoord(scanner, "b")) return;
+                System.out.println("Blokkade: Je begrijpt het doel van de retrospective niet.");
+                System.out.println("Alternatieve vraag: Wanneer vindt een Sprint Retrospective plaats?");
+                System.out.println("a) Aan het begin van elke sprint");
+                System.out.println("b) Tijdens de Daily Scrum");
+                System.out.println("c) Na de Sprint Review en vóór de volgende Sprint Planning");
+                System.out.println("d) Alleen als er problemen zijn geweest");
+                if (wachtOpAntwoord(scanner, "c")) return;
                 break;
 
             case 6:
-                System.out.println("Blokkade: Je weet niet wat het hoofddoel is van Scrum.");
-                System.out.println("Alternatieve vraag: Wat levert Scrum op?");
-                System.out.println("a) Meer vergaderingen\nb) Documentatie\nc) Regelmatige waarde voor de klant\nd) Volledige controle voor managers");
-                if (wachtOpAntwoord(scanner, "c")) return;
+                System.out.println("Blokkade: Je weet niet wat TIA betekent binnen Scrum.");
+                System.out.println("Alternatieve vraag: Wat is een mogelijke betekenis van een TIA in Scrumcontext?");
+                System.out.println("a) Tijd voor Individuele Analyse");
+                System.out.println("b) Team Improvement Action");
+                System.out.println("c) Tussentijdse Iteratie Activiteit");
+                System.out.println("d) Technisch Informatie Archief");
+                if (wachtOpAntwoord(scanner, "b")) return;
                 break;
 
             default:
@@ -66,3 +84,4 @@ public class Monster {
         }
     }
 }
+

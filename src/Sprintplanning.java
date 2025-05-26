@@ -1,9 +1,24 @@
-import java.util.Scanner;
+import java.util.Map;
 
 public class Sprintplanning extends Kamer {
-
-    public Sprintplanning(String Naam, String Beschrijving, String Thema, String Opdracht, String Vragen) {
-        super(Naam, Beschrijving, Thema, Opdracht, Vragen);
+    public Sprintplanning(HintProviderFactory hintProviderFactory) {
+        super(
+                "Sprint Planning kamer",
+                "Sprint Planning",
+                "Scrum Event",
+                "Koppel termen aan juiste uitleg",
+                new MeerkeuzeVraagStrategie(
+                        "Wat gebeurt er tijdens Sprint Planning?",
+                        new String[] {
+                                "Sprint doelen bepalen",
+                                "Review van vorige sprint",
+                                "Dagelijkse stand-up",
+                                "Sprint Retrospective"
+                        },
+                        "Sprint doelen bepalen"
+                ),
+                new HintService(hintProviderFactory, 2)
+        );
     }
 
     @Override
@@ -18,22 +33,11 @@ public class Sprintplanning extends Kamer {
 
     @Override
     protected void voerOpdrachtUit() {
-        System.out.println("Opdracht: " + Opdracht);
+        System.out.println("Opdracht uitvoeren: " + Opdracht);
     }
 
-    protected boolean stelVragen(Scanner scanner) {
-        System.out.println("Vraag: Wat is het doel van de Sprint Review?");
-        System.out.println("a) Teambuilding\nb) Werk demonstreren aan stakeholders\nc) Klanten bellen\nd) Vakantie bespreken");
-
-        String antwoord = scanner.nextLine().trim().toLowerCase();
-
-        if (antwoord.equals("b")) {
-            System.out.println("Correct antwoord!");
-            return true;
-        } else {
-            System.out.println("Fout antwoord! Een impediment (monster) verschijnt.");
-            new Monster().verschijnt(4);
-            return true;
-        }
+    @Override
+    protected int getKamerNummer() {
+        return 2;
     }
 }

@@ -14,19 +14,38 @@ public class MeerkeuzeVraagStrategie implements VraagStrategie {
     @Override
     public boolean stelVraag(Scanner scanner, int kamerNummer) {
         System.out.println("Vraag: " + vraag);
-        for (String optie : opties) {
-            System.out.println(optie);
+        for (int i = 0; i < opties.length; i++) {
+            char letter = (char) ('A' + i);
+            System.out.println(letter + ". " + opties[i]);
         }
 
-        String antwoord = scanner.nextLine().trim().toLowerCase();
+        String invoer = "";
+        char keuze = ' ';
+        boolean geldigeKeuze = false;
 
-        if (antwoord.equals(correctAntwoord)) {
-            System.out.println("Correct antwoord!");
-            return true;
-        } else {
-            System.out.println("Fout antwoord! Een impediment (monster) verschijnt.");
-            new Monster().verschijnt(kamerNummer);
-            return true; // doorgaan na het verslaan van monster
+        while (!geldigeKeuze) {
+            System.out.print("Kies een optie (A-" + (char)('A' + opties.length - 1) + "): ");
+            invoer = scanner.nextLine().trim().toUpperCase();
+
+            if (invoer.length() == 1) {
+                keuze = invoer.charAt(0);
+                int index = keuze - 'A';
+                if (index >= 0 && index < opties.length) {
+                    geldigeKeuze = true;
+                    if (opties[index].equalsIgnoreCase(correctAntwoord)) {
+                        System.out.println("✅ Correct antwoord!");
+                    } else {
+                        System.out.println("❌ Fout antwoord! Het juiste antwoord was: " + correctAntwoord);
+                        new Monster().verschijnt(kamerNummer);
+                    }
+                } else {
+                    System.out.println("Ongeldige letter. Kies A t/m " + (char)('A' + opties.length - 1));
+                }
+            } else {
+                System.out.println("Voer één letter in.");
+            }
         }
+        return true;
     }
+
 }

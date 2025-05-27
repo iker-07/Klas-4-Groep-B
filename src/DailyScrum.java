@@ -1,28 +1,35 @@
-import java.util.Map;
-
 public class DailyScrum extends Kamer {
-    private PuzzelEventManager eventManager = new PuzzelEventManager();
-
-    public DailyScrum() {
-        super("Daily Scrum kamer", "Daily Scrum", "Scrum Event", "Koppel termen aan juiste uitleg\n", new PuzzelVraagStrategie(Map.of("Dagelijkse korte meeting van het team", "Daily Scrum", "Wat is voltooid sinds gisteren?", "Wat heb je gedaan?")));
-        this.eventManager.addObserver(new Deur());
-        this.eventManager.addObserver(new MonsterObserver());
-        this.eventManager.addObserver(new StatusDisplay());
+    public DailyScrum(HintProviderFactory hintProviderFactory) {
+        super(
+                "Daily Scrum kamer",
+                "Daily Scrum",
+                "Scrum Event",
+                "Koppel termen aan juiste uitleg",
+                new OpenVraagStrategie(
+                        "Wat gebeurt er tijdens een Daily Scrum?",
+                        "Het team stemt dagelijks werk af"
+                ),
+                new HintService(hintProviderFactory, 1)
+        );
     }
 
+    @Override
     protected void toonNaam() {
-        System.out.println("Kamernaam: " + this.Naam);
+        System.out.println("Kamernaam: " + Naam);
     }
 
+    @Override
     protected void toonBeschrijving() {
-        System.out.println("Beschrijving: " + this.Beschrijving);
+        System.out.println("Beschrijving: " + Beschrijving);
     }
 
+    @Override
     protected void voerOpdrachtUit() {
-        System.out.println("Opdracht uitvoeren: " + this.Opdracht);
+        System.out.println("Opdracht uitvoeren: " + Opdracht);
     }
 
+    @Override
     protected int getKamerNummer() {
-        return 3;
+        return 1;
     }
 }

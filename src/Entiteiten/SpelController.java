@@ -1,3 +1,7 @@
+package Entiteiten;
+
+import kamers.Kamer;
+
 import java.util.*;
 
 public class SpelController {
@@ -17,7 +21,7 @@ public class SpelController {
             System.out.println();
 
             if ("stop".equals(input) || "quit".equals(input)) {
-                System.out.println("Spel wordt gestopt. Tot ziens!");
+                System.out.println("Entiteiten.Spel wordt gestopt. Tot ziens!");
                 break;
             }
 

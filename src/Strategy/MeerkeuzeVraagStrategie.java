@@ -1,3 +1,8 @@
+package Strategy;
+
+import Entiteiten.Monster;
+import Hint.HintProviderFactory;
+
 import java.util.Scanner;
 
 public class MeerkeuzeVraagStrategie implements VraagStrategie {
@@ -5,10 +10,13 @@ public class MeerkeuzeVraagStrategie implements VraagStrategie {
     private final String[] opties;
     private final String correctAntwoord;
 
-    public MeerkeuzeVraagStrategie(String vraag, String[] opties, String correctAntwoord) {
+    private final HintProviderFactory hintProviderFactory;
+
+    public MeerkeuzeVraagStrategie(String vraag, String[] opties, String correctAntwoord, HintProviderFactory hintProviderFactory) {
         this.vraag = vraag;
         this.opties = opties;
         this.correctAntwoord = correctAntwoord;
+        this.hintProviderFactory = hintProviderFactory;
     }
 
     @Override

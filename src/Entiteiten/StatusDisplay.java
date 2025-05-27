@@ -1,3 +1,7 @@
+package Entiteiten;
+
+import observer.Observer;
+
 public class StatusDisplay implements Observer {
     @Override
     public void correctAntwoord() {

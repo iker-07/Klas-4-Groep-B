@@ -1,3 +1,7 @@
+package Strategy;
+
+import Hint.HintProviderFactory;
+
 import java.util.Map;
 import java.util.Scanner;
 

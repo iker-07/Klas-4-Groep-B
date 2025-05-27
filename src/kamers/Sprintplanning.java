@@ -1,13 +1,15 @@
-import java.util.Map;
+package kamers;
+
+import Hint.HintProviderFactory;
+import Hint.HintService;
+import Strategy.MeerkeuzeVraagStrategie;
 
 public class Sprintplanning extends Kamer {
     public Sprintplanning(HintProviderFactory hintProviderFactory) {
         super(
-                "Sprint Planning kamer",
-                "Sprint Planning",
-                "Scrum Event",
-                "Koppel termen aan juiste uitleg",
+                "Sprint Planning kamer","Sprint Planning","Scrum Event","Koppel termen aan juiste uitleg",
                 new MeerkeuzeVraagStrategie(
+
                         "Wat gebeurt er tijdens Sprint Planning?",
                         new String[] {
                                 "Sprint doelen bepalen",
@@ -15,7 +17,7 @@ public class Sprintplanning extends Kamer {
                                 "Dagelijkse stand-up",
                                 "Sprint Retrospective"
                         },
-                        "Sprint doelen bepalen"
+                        "Sprint doelen bepalen", hintProviderFactory
                 ),
                 new HintService(hintProviderFactory, 2)
         );

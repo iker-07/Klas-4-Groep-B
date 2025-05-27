@@ -1,3 +1,4 @@
+package Hint;
 
 public class HintService {
     private final HintProviderFactory factory;

@@ -1,4 +1,8 @@
-import java.util.Map;
+package kamers;
+
+import Hint.HintProviderFactory;
+import Hint.HintService;
+import Strategy.MeerkeuzeVraagStrategie;
 
 public class Sprintreview extends Kamer {
     public Sprintreview(HintProviderFactory hintProviderFactory) {
@@ -15,7 +19,7 @@ public class Sprintreview extends Kamer {
                                 "Het team plant de volgende sprint",
                                 "Er wordt gewerkt aan het sprintdoel"
                         },
-                        "Het sprintresultaat wordt gedemonstreerd"
+                        "Het sprintresultaat wordt gedemonstreerd",hintProviderFactory
                 ),
                 new HintService(hintProviderFactory, 4)
         );

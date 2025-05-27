@@ -1,3 +1,8 @@
+package kamers;
+
+import Hint.HintService;
+import Strategy.VraagStrategie;
+
 import java.util.Scanner;
 
 public abstract class Kamer {

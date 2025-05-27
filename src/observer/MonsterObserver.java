@@ -1,3 +1,5 @@
+package observer;
+
 public class MonsterObserver implements Observer {
     @Override
     public void correctAntwoord() {

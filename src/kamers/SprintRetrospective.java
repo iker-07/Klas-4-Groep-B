@@ -1,4 +1,8 @@
-import java.util.Map;
+package kamers;
+
+import Hint.HintProviderFactory;
+import Hint.HintService;
+import Strategy.OpenVraagStrategie;
 
 public class SprintRetrospective extends Kamer {
     public SprintRetrospective(HintProviderFactory hintProviderFactory) {
@@ -9,7 +13,7 @@ public class SprintRetrospective extends Kamer {
                 "Koppel termen aan juiste uitleg",
                 new OpenVraagStrategie(
                         "Wat is het doel van een Sprint Retrospective?",
-                        "Het team bespreekt wat goed en beter kan"
+                        "Het team bespreekt wat goed en beter kan", hintProviderFactory
                 ),
                 new HintService(hintProviderFactory, 3)
         );

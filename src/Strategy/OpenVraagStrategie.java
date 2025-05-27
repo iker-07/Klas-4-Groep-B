@@ -1,12 +1,21 @@
+package Strategy;
+
+import Entiteiten.Monster;
+import Hint.HintProviderFactory;
+
 import java.util.Scanner;
 
 public class OpenVraagStrategie implements VraagStrategie {
     private final String vraag;
     private final String correctAntwoord;
 
-    public OpenVraagStrategie(String vraag, String correctAntwoord) {
+    private final HintProviderFactory hintProviderFactory;
+
+    public OpenVraagStrategie(String vraag, String correctAntwoord, HintProviderFactory hintProviderFactory) {
         this.vraag = vraag;
         this.correctAntwoord = correctAntwoord.toLowerCase();
+        this.hintProviderFactory = hintProviderFactory;
+
     }
 
     @Override

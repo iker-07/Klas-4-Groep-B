@@ -1,4 +1,6 @@
 
+import Entiteiten.SpelController;
+
 import java.util.Scanner;
 
 public class Main {

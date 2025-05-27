@@ -1,9 +1,11 @@
+package Entiteiten;
+
 import java.util.Scanner;
 
 public class Monster {
     public void verschijnt(int kamerNummer) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nEen Monster verschijnt!");
+        System.out.println("\nEen Entiteiten.Monster verschijnt!");
 
         switch (kamerNummer) {
             case 1:
@@ -57,8 +59,8 @@ public class Monster {
                 break;
 
             case 6:
-                System.out.println("Blokkade: Je weet niet wat TIA betekent binnen Scrum.");
-                System.out.println("Alternatieve vraag: Wat is een mogelijke betekenis van een TIA in Scrumcontext?");
+                System.out.println("Blokkade: Je weet niet wat kamers.TIA betekent binnen Scrum.");
+                System.out.println("Alternatieve vraag: Wat is een mogelijke betekenis van een kamers.TIA in Scrumcontext?");
                 System.out.println("a) Tijd voor Individuele Analyse");
                 System.out.println("b) Team Improvement Action");
                 System.out.println("c) Tussentijdse Iteratie Activiteit");
@@ -76,7 +78,7 @@ public class Monster {
             System.out.print("Jouw keuze (a/b/c/d): ");
             String input = scanner.nextLine().trim().toLowerCase();
             if (input.equals(correctAntwoord)) {
-                System.out.println("Monster verslagen! Je mag doorgaan.");
+                System.out.println("Entiteiten.Monster verslagen! Je mag doorgaan.");
                 return true;
             } else {
                 System.out.println("Fout. Probeer opnieuw.");

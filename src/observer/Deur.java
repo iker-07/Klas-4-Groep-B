@@ -1,3 +1,4 @@
+package observer;
 
 public class Deur implements Observer {
     @Override

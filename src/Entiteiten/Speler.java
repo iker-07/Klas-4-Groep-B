@@ -1,3 +1,5 @@
+package Entiteiten;
+
 class Speler {
     String positie;
     String statusPet;

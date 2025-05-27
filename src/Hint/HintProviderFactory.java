@@ -1,3 +1,4 @@
+package Hint;
 
 import java.util.*;
 
@@ -7,7 +8,7 @@ public class HintProviderFactory {
     private final Random random = new Random();
 
     public HintProviderFactory() {
-        // Kamer 1 - Daily Scrum
+        // kamers.Kamer 1 - Daily Scrum
         helpHintsPerKamer.put(1, List.of(
                 "Een standup duurt maximaal 15 minuten.",
                 "Iedereen deelt wat hij heeft gedaan sinds de vorige meeting."
@@ -17,7 +18,7 @@ public class HintProviderFactory {
                 "Niet te veel koffie, blijf wakker tijdens de meeting!"
         ));
 
-        // Kamer 2 - Sprintplanning
+        // kamers.Kamer 2 - kamers.Sprintplanning
         helpHintsPerKamer.put(2, List.of(
                 "In de Sprint Planning bepaal je wat je gaat doen in de sprint.",
                 "Je maakt een backlog voor de sprint."
@@ -27,7 +28,7 @@ public class HintProviderFactory {
                 "Sprint Planning is geen sportwedstrijd, maar bijna."
         ));
 
-        // Kamer 3 - Sprint Retrospective
+        // kamers.Kamer 3 - Sprint Retrospective
         helpHintsPerKamer.put(3, List.of(
                 "Tijdens de Sprint Retrospective bespreek je wat beter kan.",
                 "Reflecteer op de afgelopen sprint."
@@ -37,7 +38,7 @@ public class HintProviderFactory {
                 "Reflecteren mag, maar niet in de badkamer."
         ));
 
-        // Kamer 4 - Sprint Review
+        // kamers.Kamer 4 - Sprint Review
         helpHintsPerKamer.put(4, List.of(
                 "Feedback verzamelen is essentieel voor verbetering.",
                 "Demonstraties tonen wat je hebt gemaakt."
@@ -47,9 +48,9 @@ public class HintProviderFactory {
                 "Het monster houdt niet van saaie demo's!"
         ));
 
-        // Kamer 5 - Scrumboard
+        // kamers.Kamer 5 - kamers.Scrumboard
         helpHintsPerKamer.put(5, List.of(
-                "Scrumboard toont je voortgang.",
+                "kamers.Scrumboard toont je voortgang.",
                 "Taken worden zichtbaar tijdens de sprint."
         ));
         funnyHintsPerKamer.put(5, List.of(
@@ -57,7 +58,7 @@ public class HintProviderFactory {
                 "Het scrumboard is geen magnetisch bord voor koelkastpoëzie."
         ));
 
-        // Kamer 6 - TIA (Technische Informatie Analyse)
+        // kamers.Kamer 6 - kamers.TIA (Technische Informatie Analyse)
         helpHintsPerKamer.put(6, List.of(
                 "Tijdens de Daily Scrum synchroniseer je dagelijks.",
                 "De standup duurt maximaal 15 minuten."
@@ -67,7 +68,7 @@ public class HintProviderFactory {
                 "Praat niet over het weer, focus op werk!"
         ));
 
-        // Kamer 7 - Finale kamer
+        // kamers.Kamer 7 - Finale kamer
         helpHintsPerKamer.put(7, List.of(
                 "Technische informatie analyse helpt problemen te doorgronden.",
                 "Analyseer grondig om de oorzaak te vinden."

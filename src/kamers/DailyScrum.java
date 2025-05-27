@@ -1,3 +1,9 @@
+package kamers;
+
+import Hint.HintProviderFactory;
+import Hint.HintService;
+import Strategy.OpenVraagStrategie;
+
 public class DailyScrum extends Kamer {
     public DailyScrum(HintProviderFactory hintProviderFactory) {
         super(
@@ -7,7 +13,7 @@ public class DailyScrum extends Kamer {
                 "Koppel termen aan juiste uitleg",
                 new OpenVraagStrategie(
                         "Wat gebeurt er tijdens een Daily Scrum?",
-                        "Het team stemt dagelijks werk af"
+                        "Het team stemt dagelijks werk af", hintProviderFactory
                 ),
                 new HintService(hintProviderFactory, 1)
         );

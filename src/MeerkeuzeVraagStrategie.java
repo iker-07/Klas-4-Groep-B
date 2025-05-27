@@ -33,9 +33,9 @@ public class MeerkeuzeVraagStrategie implements VraagStrategie {
                 if (index >= 0 && index < opties.length) {
                     geldigeKeuze = true;
                     if (opties[index].equalsIgnoreCase(correctAntwoord)) {
-                        System.out.println("✅ Correct antwoord!");
+                        System.out.println(" Correct antwoord!");
                     } else {
-                        System.out.println("❌ Fout antwoord! Het juiste antwoord was: " + correctAntwoord);
+                        System.out.println(" Fout antwoord! Het juiste antwoord was: " + correctAntwoord);
                         new Monster().verschijnt(kamerNummer);
                     }
                 } else {

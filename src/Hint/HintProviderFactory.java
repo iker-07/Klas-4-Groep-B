@@ -14,7 +14,7 @@ public class HintProviderFactory {
                 "Iedereen deelt wat hij heeft gedaan sinds de vorige meeting."
         ));
         funnyHintsPerKamer.put(1, List.of(
-                "Voorkom dat je gaat gamen tijdens de standup!",
+                "De Daily Scrum is geen dagvullende soapaflevering.!",
                 "Niet te veel koffie, blijf wakker tijdens de meeting!"
         ));
 

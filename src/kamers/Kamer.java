@@ -10,6 +10,7 @@ public abstract class Kamer {
     protected String Beschrijving;
     protected String Type;
     protected String Opdracht;
+
     protected VraagStrategie vraagStrategie;
     protected HintService hintService;
 

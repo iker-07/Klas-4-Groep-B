@@ -9,13 +9,13 @@ public class Monster {
 
         switch (kamerNummer) {
             case 1:
-                System.out.println("Blokkade: Je snapt het nut van een scrumbord niet.");
-                System.out.println("Alternatieve vraag: Waarvoor wordt een scrumbord gebruikt?");
-                System.out.println("a) Voor het bijhouden van persoonlijke doelen");
-                System.out.println("b) Voor het organiseren van taken binnen het Scrumteam");
-                System.out.println("c) Voor het meten van klanttevredenheid");
-                System.out.println("d) Voor het documenteren van de sprintreview");
-                if (wachtOpAntwoord(scanner, "b")) return;
+                System.out.println("Blokkade: Je weet niet hoe lang een Daily Scrum duurt.");
+                System.out.println("Alternatieve vraag: Wie leidt de Daily Scrum?");
+                System.out.println("a) De Scrum Master");
+                System.out.println("b) De Product Owner");
+                System.out.println("c) De developers zelf");
+                System.out.println("d) De projectmanager");
+                if (wachtOpAntwoord(scanner, "c")) return;
                 break;
 
             case 2:
@@ -29,14 +29,15 @@ public class Monster {
                 break;
 
             case 3:
-                System.out.println("Blokkade: Je weet niet hoe lang een Daily Scrum duurt.");
-                System.out.println("Alternatieve vraag: Wie leidt de Daily Scrum?");
-                System.out.println("a) De Scrum Master");
-                System.out.println("b) De Product Owner");
-                System.out.println("c) De developers zelf");
-                System.out.println("d) De projectmanager");
-                if (wachtOpAntwoord(scanner, "c")) return;
+                System.out.println("Blokkade: Je snapt het nut van een scrumbord niet.");
+                System.out.println("Alternatieve vraag: Waarvoor wordt een scrumbord gebruikt?");
+                System.out.println("a) Voor het bijhouden van persoonlijke doelen");
+                System.out.println("b) Voor het organiseren van taken binnen het Scrumteam");
+                System.out.println("c) Voor het meten van klanttevredenheid");
+                System.out.println("d) Voor het documenteren van de sprintreview");
+                if (wachtOpAntwoord(scanner, "b")) return;
                 break;
+
 
             case 4:
                 System.out.println("Blokkade: Je weet niet wat het doel is van de Sprint Review.");
@@ -86,4 +87,3 @@ public class Monster {
         }
     }
 }
-

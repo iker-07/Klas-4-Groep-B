@@ -14,7 +14,7 @@ public abstract class Kamer {
     protected VraagStrategie vraagStrategie;
     protected HintService hintService;
 
-    public Kamer(String naam, String beschrijving, String type, String opdracht, VraagStrategie vraagStrategie, HintService hintService) {
+    public Kamer(String naam, String beschrijving,String type, String opdracht, VraagStrategie vraagStrategie, HintService hintService) {
         this.Naam = naam;
         this.Beschrijving = beschrijving;
         this.Type = type;

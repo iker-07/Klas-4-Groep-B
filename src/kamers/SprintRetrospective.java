@@ -13,7 +13,9 @@ public class SprintRetrospective extends Kamer {
                 "Koppel termen aan juiste uitleg",
                 new OpenVraagStrategie(
                         "Wat is het doel van een Sprint Retrospective?",
-                        "Het team bespreekt wat goed en beter kan", hintProviderFactory
+                        "Het team bespreekt wat goed en beter kan",
+                        hintProviderFactory,
+                        3 // 👈 toegevoegd: kamerNummer
                 ),
                 new HintService(hintProviderFactory, 3)
         );

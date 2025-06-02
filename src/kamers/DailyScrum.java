@@ -13,7 +13,9 @@ public class DailyScrum extends Kamer {
                 "Koppel termen aan juiste uitleg",
                 new OpenVraagStrategie(
                         "Wat gebeurt er tijdens een Daily Scrum?",
-                        "Het team stemt dagelijks werk af", hintProviderFactory
+                        "Het team stemt dagelijks werk af",
+                        hintProviderFactory,
+                        1 // kamerNummer meegeven
                 ),
                 new HintService(hintProviderFactory, 1)
         );

@@ -3,21 +3,33 @@ package kamers;
 import Hint.HintProviderFactory;
 import Hint.HintService;
 import Strategy.OpenVraagStrategie;
+import Objects.Kamerinfo;
+import Objects.Zwaard;
 
 public class DailyScrum extends Kamer {
+
+    private Kamerinfo infoBoek;
+    private Zwaard zwaard;
+
     public DailyScrum(HintProviderFactory hintProviderFactory) {
         super(
                 "Daily Scrum kamer",
                 "Daily Scrum",
                 "Scrum Event",
-                "Koppel termen aan juiste uitleg",
-                new OpenVraagStrategie(
-                        "Wat gebeurt er tijdens een Daily Scrum?",
-                        "Het team stemt dagelijks werk af",
-                        hintProviderFactory,
-                        1 // kamerNummer meegeven
-                ),
+                "Beantwoord de vraag over de Daily Scrum",
+                null,
                 new HintService(hintProviderFactory, 1)
+        );
+
+        this.zwaard = new Zwaard();
+        this.infoBoek = new Kamerinfo("De Daily Scrum is een dagelijkse bijeenkomst van het ontwikkelteam om de voortgang te bespreken.");
+
+        this.vraagStrategie = new OpenVraagStrategie(
+                "Wie leidt de Daily Scrum?",
+                "De developers zelf",
+                hintProviderFactory,
+                1,
+                zwaard
         );
     }
 
@@ -34,6 +46,7 @@ public class DailyScrum extends Kamer {
     @Override
     protected void voerOpdrachtUit() {
         System.out.println("Opdracht uitvoeren: " + Opdracht);
+        infoBoek.showMessage();
     }
 
     @Override

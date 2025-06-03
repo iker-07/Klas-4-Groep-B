@@ -16,12 +16,13 @@ public class SpelController {
         Spel.StartGame();
 
         while (voltooideKamers.size() < 6) {
+            System.out.println("Kies een kamer tussen 1 t/m 5). Kamer 6 kan nog niet ;-)");
             System.out.print("Typ een commando (bijv. 'ga naar kamer x' of 'stop'): ");
             String input = scanner.nextLine().trim().toLowerCase();
             System.out.println();
 
             if ("stop".equals(input) || "quit".equals(input)) {
-                System.out.println("Entiteiten.Spel wordt gestopt. Tot ziens!");
+                System.out.println("Spel wordt gestopt. Tot ziens!");
                 break;
             }
 

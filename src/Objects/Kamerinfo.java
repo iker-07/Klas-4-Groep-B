@@ -11,6 +11,6 @@ public class Kamerinfo implements Readable {
 
     @Override
     public void showMessage() {
-        System.out.println("📘 Kamerinfo: " + boodschap);
+        System.out.println("Kamerinfo: " + boodschap);
     }
 }

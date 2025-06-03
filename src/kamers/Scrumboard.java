@@ -50,8 +50,8 @@ public class Scrumboard extends Kamer {
 
     @Override
     protected void voerOpdrachtUit() {
-        System.out.println("🧩 Opdracht uitvoeren: " + Opdracht);
-        infoBoek.showMessage(); // 📘 toon uitleg
+        System.out.println("Opdracht uitvoeren: " + Opdracht);
+        infoBoek.showMessage();
         // zwaard.attack(); // Alleen via strategie bij monster
     }
 

@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Spel {
-    public static String spelerNaam = "Entiteiten.Speler";
+    public static String spelerNaam = "Speler";
     private static final Map<Integer, Kamer> kamers = new HashMap<>();
     private static HintProviderFactory hintProviderFactory;
 

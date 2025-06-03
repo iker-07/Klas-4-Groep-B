@@ -51,7 +51,7 @@ public class Sprintplanning extends Kamer {
 
     @Override
     protected void voerOpdrachtUit() {
-        System.out.println("🧩 Opdracht uitvoeren: " + Opdracht);
+        System.out.println("Opdracht uitvoeren: " + Opdracht);
         infoBoek.showMessage();
     }
 

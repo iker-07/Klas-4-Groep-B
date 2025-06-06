@@ -2,7 +2,12 @@ package Entiteiten;
 
 import kamers.Kamer;
 
+
 import java.util.*;
+
+import static Entiteiten.Speler.positie;
+import static Entiteiten.Speler.toonStatus;
+import static Entiteiten.Speler.Voltooid;
 
 public class SpelController {
     private final Scanner scanner;
@@ -32,9 +37,14 @@ public class SpelController {
 
                     if (isKamerToegestaan(kamerNummer)) {
                         Kamer kamer = Spel.kiesKamer(kamerNummer);
+                        positie = "Kamer " + kamerNummer;
+
+
                         if (kamer != null && kamer.kamerMenu(scanner)) {
-                            voltooideKamers.add(kamerNummer);
+                            Speler.markeerKamerVoltooid(kamerNummer);
                         }
+
+                        toonStatus();
                     } else {
                         System.out.println(getFoutmeldingVoorKamer(kamerNummer));
                     }

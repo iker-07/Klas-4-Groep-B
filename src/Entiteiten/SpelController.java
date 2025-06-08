@@ -69,7 +69,11 @@ public class SpelController {
                             voltooideKamers.add(kamerNummer);
                         }
 
+
                         toonStatus();
+                        if (voltooideKamers.size() == 5) {
+                            System.out.println("Goed gedaan! Je mag nu naar kamer 6, de Finale kamer!");
+                        }
                     } else {
                         System.out.println(getFoutmeldingVoorKamer(kamerNummer));
                     }
@@ -82,19 +86,19 @@ public class SpelController {
         }
 
         if (voltooideKamers.size() == 6) {
-            System.out.println("\nGoed gedaan! Je mag naar de finale kamer.");
+
             Kamer finaleKamer = Spel.kiesKamer(7);
             if (finaleKamer != null) {
                 finaleKamer.kamerMenu(scanner);
             }
-            System.out.println("\nGefeliciteerd " + Spel.spelerNaam + ", je hebt alle kamers doorlopen!");
+            System.out.println("\nGefeliciteerd " + Speler.spelerNaam + ", je hebt alle kamers doorlopen!");
         }
     }
 
     private void kiesJoker() {
         System.out.println("Kies een joker om mee te nemen:");
         System.out.println("1 = Hint Joker (in elke kamer bruikbaar)");
-        System.out.println("2 = Key Joker (alleen in kamer 'Daily Scrum' en 'Sprint Review', 2 keer te gebruiken)");
+        System.out.println("2 = Key Joker (alleen in kamer 'Daily Scrum (1)' en 'Sprint Review (4)', 2 keer te gebruiken)");
 
         while (gekozenJoker == null) {
             System.out.print("Typ 1 of 2: ");
@@ -132,7 +136,7 @@ public class SpelController {
 
             gekozenJoker.useIn(kamer);
 
-            // ✅ Markeer kamer als voltooid bij succesvol gebruik van de joker
+
             if (!voltooideKamers.contains(kamerNummer)) {
                 markeerKamerVoltooid(kamerNummer);
                 voltooideKamers.add(kamerNummer);

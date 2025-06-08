@@ -1,6 +1,8 @@
-
+import Entiteiten.Speler;
 import Entiteiten.SpelController;
 import java.util.Scanner;
+
+import static Entiteiten.Speler.spelerNaam;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,7 +11,9 @@ public class Main {
 
 
         Scanner scanner = new Scanner(System.in);
-        SpelController spelController = new SpelController(scanner);
+        SpelController spelController = new SpelController(scanner); System.out.println("wat is uw naam?");
+        spelerNaam = scanner.nextLine() ;
+        System.out.println("Hallo "+ spelerNaam + ". Veel succes!");
         spelController.start();
 
         scanner.close();

@@ -5,11 +5,12 @@ import Hint.HintService;
 import Strategy.OpenVraagStrategie;
 import Objects.Kamerinfo;
 import Objects.Zwaard;
+import Jokers.KeyJokerSupport;
 
-public class DailyScrum extends Kamer {
+public class DailyScrum extends Kamer implements KeyJokerSupport {
 
-    private Kamerinfo infoBoek;
-    private Zwaard zwaard;
+    private final Kamerinfo infoBoek;
+    private final Zwaard zwaard;
 
     public DailyScrum(HintProviderFactory hintProviderFactory) {
         super(
@@ -31,26 +32,44 @@ public class DailyScrum extends Kamer {
                 1,
                 zwaard
         );
+
+        this.monsterAanwezig = true;
     }
 
     @Override
     protected void toonNaam() {
-        System.out.println("Kamernaam: " + Naam);
+        System.out.println("Kamernaam: " + naam);
     }
 
     @Override
     protected void toonBeschrijving() {
-        System.out.println("Beschrijving: " + Beschrijving);
+        System.out.println("Beschrijving: " + beschrijving);
     }
 
     @Override
     protected void voerOpdrachtUit() {
-        System.out.println("Opdracht uitvoeren: " + Opdracht);
+        System.out.println("Opdracht uitvoeren: " + opdracht);
         infoBoek.showMessage();
     }
 
     @Override
-    protected int getKamerNummer() {
+    public int getKamerNummer() {
         return 1;
+    }
+
+    @Override
+    public void geefExtraSleutel() {
+        System.out.println("Je hebt een extra sleutel gekregen in de Daily Scrum kamer!");
+    }
+
+    @Override
+    public void gebruikKeyJoker() {
+        if (!monsterVerslagen) {
+            System.out.println("Key Joker gebruikt! Het monster verdwijnt.");
+            monsterVerslagen = true;
+            geefExtraSleutel();
+        } else {
+            System.out.println("Het monster is al verslagen.");
+        }
     }
 }

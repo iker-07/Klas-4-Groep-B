@@ -1,14 +1,16 @@
 package Entiteiten;
 
-import Jokers.Joker;
 import Jokers.HintJoker;
+import Jokers.Joker;
 import Jokers.KeyJoker;
-import kamers.Kamer;
 import Jokers.KeyJokerSupport;
+import kamers.Kamer;
 
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
+
+import static Entiteiten.Speler.positie;
+import static Entiteiten.Speler.toonStatus;
+import static Entiteiten.Speler.markeerKamerVoltooid;
 
 public class SpelController {
     private final Scanner scanner;
@@ -22,16 +24,17 @@ public class SpelController {
     public void start() {
         Spel.StartGame();
 
-        // Laat speler kiezen welke joker hij wil gebruiken bij start
+        // Joker laten kiezen
         kiesJoker();
 
         while (voltooideKamers.size() < 6) {
             System.out.println("\nTyp een commando:");
-            System.out.println("- 'ga naar kamer x' (1 t/m 5)");
+            System.out.println("- 'ga naar kamer x' (1 t/m 6)");
             System.out.println("- 'gebruik joker'");
             System.out.println("- 'stop'");
             System.out.print("Invoer: ");
             String input = scanner.nextLine().trim().toLowerCase();
+            System.out.println();
 
             if ("stop".equals(input) || "quit".equals(input)) {
                 System.out.println("Spel wordt gestopt. Tot ziens!");
@@ -56,11 +59,17 @@ public class SpelController {
             if (input.startsWith("ga naar kamer")) {
                 try {
                     int kamerNummer = Integer.parseInt(input.replaceAll("[^0-9]", ""));
+
                     if (isKamerToegestaan(kamerNummer)) {
                         Kamer kamer = Spel.kiesKamer(kamerNummer);
+                        positie = "Kamer " + kamerNummer;
+
                         if (kamer != null && kamer.kamerMenu(scanner)) {
+                            markeerKamerVoltooid(kamerNummer);
                             voltooideKamers.add(kamerNummer);
                         }
+
+                        toonStatus();
                     } else {
                         System.out.println(getFoutmeldingVoorKamer(kamerNummer));
                     }
@@ -86,12 +95,13 @@ public class SpelController {
         System.out.println("Kies een joker om mee te nemen:");
         System.out.println("1 = Hint Joker (in elke kamer bruikbaar)");
         System.out.println("2 = Key Joker (alleen in kamer 'Daily Scrum' en 'Sprint Review', 2 keer te gebruiken)");
+
         while (gekozenJoker == null) {
             System.out.print("Typ 1 of 2: ");
             String keuze = scanner.nextLine().trim();
 
             if (keuze.equals("1")) {
-                gekozenJoker = new HintJoker(Spel.hintService);  // hier meegeven
+                gekozenJoker = new HintJoker(Spel.hintService); // Verondersteld dat Spel.hintService bestaat
                 System.out.println("Je hebt gekozen voor de Hint Joker.");
             } else if (keuze.equals("2")) {
                 gekozenJoker = new KeyJoker();
@@ -113,7 +123,6 @@ public class SpelController {
                 return;
             }
 
-            // Als KeyJoker, check of kamer KeyJokerSupport implementeert
             if (gekozenJoker instanceof KeyJoker) {
                 if (!(kamer instanceof KeyJokerSupport)) {
                     System.out.println("Key Joker kan alleen in de kamers 'Daily Scrum' en 'Sprint Review' gebruikt worden.");
@@ -122,6 +131,12 @@ public class SpelController {
             }
 
             gekozenJoker.useIn(kamer);
+
+            // ✅ Markeer kamer als voltooid bij succesvol gebruik van de joker
+            if (!voltooideKamers.contains(kamerNummer)) {
+                markeerKamerVoltooid(kamerNummer);
+                voltooideKamers.add(kamerNummer);
+            }
 
         } catch (NumberFormatException e) {
             System.out.println("Ongeldig kamer nummer.");

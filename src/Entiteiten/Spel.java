@@ -9,6 +9,7 @@ import java.util.Map;
 public class Spel {
     public static String spelerNaam = "Speler";
     private static final Map<Integer, Kamer> kamers = new HashMap<>();
+    static HintProviderFactory hintService;
     private static HintProviderFactory hintProviderFactory;
 
     public static void StartGame() {

@@ -3,13 +3,19 @@ package Entiteiten;
 import java.util.Scanner;
 
 public class Monster {
+
+    public void blok(){
+        System.out.print("Blokkade!!!!");
+    }
+
     public void verschijnt(int kamerNummer) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nEen Monster verschijnt! RAAAWRH");
 
         switch (kamerNummer) {
             case 1:
-                System.out.println("Blokkade: Je weet niet hoe lang een Daily Scrum duurt.");
+                blok();
+                System.out.println("Je weet niet hoe lang een Daily Scrum duurt.");
                 System.out.println("Alternatieve vraag: Wie leidt de Daily Scrum?");
                 System.out.println("a) De Scrum Master");
                 System.out.println("b) De Product Owner");
@@ -19,7 +25,8 @@ public class Monster {
                 break;
 
             case 2:
-                System.out.println("Blokkade: Je weet niet precies wat er gebeurt tijdens Sprint Planning.");
+                blok();
+                System.out.println("Je weet niet precies wat er gebeurd tijdens een Sprint Planning.");
                 System.out.println("Alternatieve vraag: Wat is het doel van de Sprint Planning?");
                 System.out.println("a) Een lijst met bugs verzamelen");
                 System.out.println("b) Het team instrueren over hun werktijden");
@@ -29,7 +36,8 @@ public class Monster {
                 break;
 
             case 3:
-                System.out.println("Blokkade: Je snapt het nut van een scrumbord niet.");
+                blok();
+                System.out.println("Je snapt het nut van een Scrumbord niet");
                 System.out.println("Alternatieve vraag: Waarvoor wordt een scrumbord gebruikt?");
                 System.out.println("a) Voor het bijhouden van persoonlijke doelen");
                 System.out.println("b) Voor het organiseren van taken binnen het Scrumteam");
@@ -40,7 +48,8 @@ public class Monster {
 
 
             case 4:
-                System.out.println("Blokkade: Je weet niet wat het doel is van de Sprint Review.");
+                blok();
+                System.out.println("Je weet niet wat het doel is van de Sprint Review");
                 System.out.println("Alternatieve vraag: Wat toont het team tijdens de Sprint Review?");
                 System.out.println("a) De volledige backlog");
                 System.out.println("b) De technische documentatie");
@@ -50,7 +59,8 @@ public class Monster {
                 break;
 
             case 5:
-                System.out.println("Blokkade: Je begrijpt het doel van de retrospective niet.");
+                blok();
+                System.out.println("je begrijpt het doel van de retrospective niet");
                 System.out.println("Alternatieve vraag: Wanneer vindt een Sprint Retrospective plaats?");
                 System.out.println("a) Aan het begin van elke sprint");
                 System.out.println("b) Tijdens de Daily Scrum");
@@ -60,7 +70,8 @@ public class Monster {
                 break;
 
             case 6:
-                System.out.println("Blokkade: Je weet niet wat kamers.TIA betekent binnen Scrum.");
+                blok();
+                System.out.println("je weet niet wat de TIA kamer inhoud");
                 System.out.println("Alternatieve vraag: Wat is een mogelijke betekenis van een kamers.TIA in Scrumcontext?");
                 System.out.println("a) Tijd voor Individuele Analyse");
                 System.out.println("b) Team Improvement Action");

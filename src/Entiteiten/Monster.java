@@ -3,13 +3,18 @@ package Entiteiten;
 import java.util.Scanner;
 
 public class Monster {
+
+    public void blok(){
+        System.out.println("Blokkade1: Je weet niet hoe lang een Daily Scrum duurt.");
+    }
+
     public void verschijnt(int kamerNummer) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\nEen Monster verschijnt! RAAAWRH");
 
         switch (kamerNummer) {
             case 1:
-                System.out.println("Blokkade: Je weet niet hoe lang een Daily Scrum duurt.");
+                blok();
                 System.out.println("Alternatieve vraag: Wie leidt de Daily Scrum?");
                 System.out.println("a) De Scrum Master");
                 System.out.println("b) De Product Owner");

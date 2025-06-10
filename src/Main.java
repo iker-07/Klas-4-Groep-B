@@ -11,7 +11,7 @@ public class Main {
 
 
         Scanner scanner = new Scanner(System.in);
-        SpelController spelController = new SpelController(scanner); System.out.println("wat is uw Naam");
+        SpelController spelController = new SpelController(scanner); System.out.println("wat is uw naam?");
         spelerNaam = scanner.nextLine() ;
         System.out.println("Hallo "+ spelerNaam + ". Veel succes!");
         spelController.start();

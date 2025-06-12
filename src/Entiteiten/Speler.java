@@ -8,12 +8,8 @@ public class Speler {
     public static String spelerNaam;
 
     public static ArrayList<Integer> Voltooid = new ArrayList<>();
-//    int voortgang;
 
-    public Speler(String spelerNaam, String geslacht, String gamertag) {
-
-
-
+    public Speler(String spelerNaam) {
 
     }
     public static void markeerKamerVoltooid(int kamerNummer) {
@@ -22,11 +18,6 @@ public class Speler {
             System.out.println("Kamer " + kamerNummer + " voltooid.");
         }
     }
-
-//    public void Move(String nieuwePositie) {
-//        this.positie = nieuwePositie;
-//    }
-
 
     public static void toonStatus() {
         System.out.println("==== Spelerstatus ====");

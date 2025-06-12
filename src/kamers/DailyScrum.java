@@ -69,7 +69,7 @@ public class DailyScrum extends Kamer implements KeyJokerSupport {
     @Override
     public void gebruikKeyJoker() {
         if (!monsterVerslagen) {
-            System.out.println("Key Joker gebruikt! Het monster verdwijnt.");
+            System.out.println("Key Joker gebruikt!");
             monsterVerslagen = true;
             geefExtraSleutel();
         } else {

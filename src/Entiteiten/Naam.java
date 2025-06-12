@@ -6,9 +6,6 @@ import static Entiteiten.Speler.spelerNaam;
 
 public class Naam {
 
-
-
-
     public boolean naamding() {
         Scanner scanner = new Scanner(System.in);
         SpelController spelController = new SpelController(scanner);

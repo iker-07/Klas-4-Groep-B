@@ -1,8 +1,12 @@
 package kamers;
 
+import Assistent.AssistentActie;
+import Assistent.HintActie;
+import Assistent.HulpmiddelActie;
+import Assistent.MotivatieActie;
 import Hint.HintService;
 import Strategy.VraagStrategie;
-
+import java.util.Arrays;
 import java.util.Scanner;
 
 public abstract class Kamer {
@@ -10,6 +14,7 @@ public abstract class Kamer {
     protected String beschrijving;
     protected String type;
     protected String opdracht;
+    private AssistentActie assistentActie;
 
     protected VraagStrategie vraagStrategie;
     protected HintService hintService;
@@ -25,12 +30,25 @@ public abstract class Kamer {
         this.opdracht = opdracht;
         this.vraagStrategie = vraagStrategie;
         this.hintService = hintService;
+        this.assistentActie = new AssistentActie(Arrays.asList(
+                new HintActie(),
+                new HulpmiddelActie(),
+                new MotivatieActie()
+        ));
     }
+
+
 
     public final boolean kamerMenu(Scanner scanner) {
         toonNaam();
         toonBeschrijving();
         voerOpdrachtUit();
+
+        System.out.print("Wil je assistentie ontvangen? (ja/nee): ");
+        String assistentAntwoord = scanner.nextLine().trim().toLowerCase();
+        if ("ja".equals(assistentAntwoord)) {
+            gebruikAssistent();
+        }
 
         boolean correct = vraagStrategie.stelVraag(scanner, getKamerNummer());
 
@@ -101,4 +119,11 @@ public abstract class Kamer {
     public String getNaam() {
         return naam;
     }
+    public void gebruikAssistent() {
+        System.out.println("Hint: Probeer de sleutel onder de mat te zoeken.");
+        System.out.println("Hulpmiddel toegevoegd: Stappenplan voor deze kamer.");
+        System.out.println("Motivatie: Je denkt als een echte product owner!");
+    }
+
 }
+

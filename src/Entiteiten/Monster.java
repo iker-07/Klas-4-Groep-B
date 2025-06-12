@@ -10,7 +10,7 @@ public class Monster {
 
     public void verschijnt(int kamerNummer) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nEen Monster verschijnt! RAAAWRH");
+        System.out.println("\nEen Entiteiten.Monster verschijnt!");
 
         switch (kamerNummer) {
             case 1:
@@ -90,7 +90,7 @@ public class Monster {
             System.out.print("Jouw keuze (a/b/c/d): ");
             String input = scanner.nextLine().trim().toLowerCase();
             if (input.equals(correctAntwoord)) {
-                System.out.println("Monster verslagen! Je mag doorgaan.");
+                System.out.println("Entiteiten.Monster verslagen! Je mag doorgaan.");
                 return true;
             } else {
                 System.out.println("Fout. Probeer opnieuw.");

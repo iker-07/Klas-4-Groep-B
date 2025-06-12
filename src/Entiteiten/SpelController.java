@@ -20,6 +20,9 @@ public class SpelController {
     public SpelController(Scanner scanner) {
         this.scanner = scanner;
     }
+    public void JokerKeuze() {
+
+    }
 
     public void start() {
         Spel.StartGame();
@@ -30,7 +33,9 @@ public class SpelController {
         while (voltooideKamers.size() < 6) {
             System.out.println("\nTyp een commando:");
             System.out.println("- 'ga naar kamer x' (1 t/m 6)");
+            if (gekozenJoker.getClass() == KeyJoker.class) {
             System.out.println("- 'gebruik joker'");
+            }
             System.out.println("- 'stop'");
             System.out.print("Invoer: ");
             String input = scanner.nextLine().trim().toLowerCase();

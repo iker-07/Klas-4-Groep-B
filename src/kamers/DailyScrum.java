@@ -6,9 +6,10 @@ import Strategy.OpenVraagStrategie;
 import Objects.Kamerinfo;
 import Objects.Zwaard;
 import Jokers.KeyJokerSupport;
+import java.util.Scanner;
 
 public class DailyScrum extends Kamer implements KeyJokerSupport {
-
+    Scanner scanner = new Scanner(System.in);
     private final Kamerinfo infoBoek;
     private final Zwaard zwaard;
 
@@ -34,7 +35,10 @@ public class DailyScrum extends Kamer implements KeyJokerSupport {
         );
 
         this.monsterAanwezig = true;
+
+
     }
+
 
     @Override
     protected void toonNaam() {
@@ -72,4 +76,7 @@ public class DailyScrum extends Kamer implements KeyJokerSupport {
             System.out.println("Het monster is al verslagen.");
         }
     }
+
 }
+
+

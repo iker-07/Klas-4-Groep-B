@@ -28,7 +28,7 @@ public class Monster {
                 blok();
                 System.out.println("Je weet niet precies wat er gebeurd tijdens een Sprint Planning.");
                 System.out.println("Alternatieve vraag: Wat is het doel van de Sprint Planning?");
-                System.out.println("a) Een lijst met bugs verzamelen ");
+                System.out.println("a) Een lijst met bugs verzamelen");
                 System.out.println("b) Het team instrueren over hun werktijden");
                 System.out.println("c) Samen het werk plannen en een Sprint Doel vaststellen");
                 System.out.println("d) Feedback verzamelen van stakeholders");

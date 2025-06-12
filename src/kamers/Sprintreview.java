@@ -29,7 +29,7 @@ public class Sprintreview extends Kamer implements KeyJokerSupport {
                 "Wat is het doel van de Sprint Review?",
                 "Feedback verzamelen en het product aanpassen",
                 hintProviderFactory,
-                2,
+                4,
                 zwaard
         );
 
@@ -54,7 +54,7 @@ public class Sprintreview extends Kamer implements KeyJokerSupport {
 
     @Override
     public int getKamerNummer() {
-        return 2;
+        return 4;
     }
 
     @Override

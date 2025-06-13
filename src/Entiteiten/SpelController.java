@@ -14,7 +14,7 @@ import static Entiteiten.Speler.markeerKamerVoltooid;
 
 public class SpelController {
     private final Scanner scanner;
-    private final Set<Integer> voltooideKamers = new HashSet<>();
+    public final Set<Integer> voltooideKamers = new HashSet<>();
     private Joker gekozenJoker;
 
     public SpelController(Scanner scanner) {
@@ -152,7 +152,7 @@ public class SpelController {
         }
     }
 
-    private boolean isKamerToegestaan(int kamerNummer) {
+    public boolean isKamerToegestaan(int kamerNummer) {
         if (kamerNummer < 1 || kamerNummer > 7) {
             return false;
         }

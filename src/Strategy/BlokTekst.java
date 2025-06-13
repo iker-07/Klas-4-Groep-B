@@ -11,10 +11,6 @@ public class BlokTekst {
     private static Joker gekozenJoker;
 
     public static boolean behandelFoutMetMonster(Scanner scanner, int kamerNummer, Zwaard zwaard, HintProvider hintProvider) {
-//        if (gekozenJoker.getClass() == KeyJoker.class) {
-//            System.out.println("Onjuist. Hint: " + hintProvider.getHint());
-//        }
-
         System.out.println("Onjuist. Hint: " + hintProvider.getHint());
         System.out.println("Een monster verspert je pad!!️");
         System.out.println("Wil je het zwaard gebruiken om het monster te verslaan? (ja/nee)");

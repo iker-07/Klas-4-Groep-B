@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 public class DailyScrum extends Kamer implements KeyJokerSupport {
     Scanner scanner = new Scanner(System.in);
-    private final Kamerinfo infoBoek;
     private final Zwaard zwaard;
 
     public DailyScrum(HintProviderFactory hintProviderFactory) {
@@ -24,7 +23,7 @@ public class DailyScrum extends Kamer implements KeyJokerSupport {
         );
 
         this.zwaard = new Zwaard();
-        this.infoBoek = new Kamerinfo("De Daily Scrum is een dagelijkse bijeenkomst van het ontwikkelteam om de voortgang te bespreken.");
+        super.infoBoek = new Kamerinfo("De Daily Scrum is een dagelijkse bijeenkomst van het ontwikkelteam om de voortgang te bespreken.");
 
         this.vraagStrategie = new OpenVraagStrategie(
                 "Wie leidt de Daily Scrum?",
@@ -37,23 +36,6 @@ public class DailyScrum extends Kamer implements KeyJokerSupport {
         this.monsterAanwezig = true;
 
 
-    }
-
-
-    @Override
-    protected void toonNaam() {
-        System.out.println("Kamernaam: " + naam);
-    }
-
-    @Override
-    protected void toonBeschrijving() {
-        System.out.println("Beschrijving: " + beschrijving);
-    }
-
-    @Override
-    protected void voerOpdrachtUit() {
-        System.out.println("Opdracht uitvoeren: " + opdracht);
-        infoBoek.showMessage();
     }
 
     @Override

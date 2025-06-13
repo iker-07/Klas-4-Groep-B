@@ -8,7 +8,6 @@ import Objects.Zwaard;
 
 public class SprintRetrospective extends Kamer {
 
-    private Kamerinfo infoBoek;
     private Zwaard zwaard;
 
     public SprintRetrospective(HintProviderFactory hintProviderFactory) {
@@ -23,7 +22,7 @@ public class SprintRetrospective extends Kamer {
 
 
         this.zwaard = new Zwaard();
-        this.infoBoek = new Kamerinfo("Tijdens een Sprint Retrospective bespreekt het team wat goed ging en wat beter kan.");
+        super.infoBoek = new Kamerinfo("Tijdens een Sprint Retrospective bespreekt het team wat goed ging en wat beter kan.");
 
 
         this.vraagStrategie = new OpenVraagStrategie(
@@ -35,22 +34,6 @@ public class SprintRetrospective extends Kamer {
         );
     }
 
-    @Override
-    protected void toonNaam() {
-        System.out.println("Kamernaam: " + naam);
-    }
-
-    @Override
-    protected void toonBeschrijving() {
-        System.out.println("Beschrijving: " + beschrijving);
-    }
-
-    @Override
-    protected void voerOpdrachtUit() {
-        System.out.println("Opdracht uitvoeren: " + opdracht);
-        infoBoek.showMessage();
-
-    }
 
     @Override
     public int getKamerNummer() {

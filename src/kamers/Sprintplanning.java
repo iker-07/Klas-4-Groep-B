@@ -8,7 +8,6 @@ import Objects.Zwaard;
 
 public class Sprintplanning extends Kamer {
 
-    private Kamerinfo infoBoek;
     private Zwaard zwaard;
 
     public Sprintplanning(HintProviderFactory hintProviderFactory) {
@@ -22,7 +21,7 @@ public class Sprintplanning extends Kamer {
         );
 
         this.zwaard = new Zwaard();
-        this.infoBoek = new Kamerinfo("Tijdens Sprint Planning bepaalt het team de doelen voor de komende sprint.");
+        super.infoBoek = new Kamerinfo("Tijdens Sprint Planning bepaalt het team de doelen voor de komende sprint.");
 
         this.vraagStrategie = new MeerkeuzeVraagStrategie(
                 "Wat gebeurt er tijdens Sprint Planning?",
@@ -39,21 +38,6 @@ public class Sprintplanning extends Kamer {
         );
     }
 
-    @Override
-    protected void toonNaam() {
-        System.out.println("Kamernaam: " + naam);
-    }
-
-    @Override
-    protected void toonBeschrijving() {
-        System.out.println("Beschrijving: " + beschrijving);
-    }
-
-    @Override
-    protected void voerOpdrachtUit() {
-        System.out.println("Opdracht uitvoeren: " + opdracht);
-        infoBoek.showMessage();
-    }
 
     @Override
     public int getKamerNummer() {

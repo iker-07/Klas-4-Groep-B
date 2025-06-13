@@ -10,7 +10,6 @@ import java.util.Map;
 
 public class TIA extends Kamer {
 
-    private final Kamerinfo infoBoek;
     private final Zwaard zwaard;
 
     public TIA(HintProviderFactory hintProviderFactory) {
@@ -20,7 +19,7 @@ public class TIA extends Kamer {
         );
 
         this.zwaard = new Zwaard();
-        this.infoBoek = new Kamerinfo("Bij Technische Informatie Analyse wordt het probleem grondig geanalyseerd en de technische oorzaak achterhaald.");
+        super.infoBoek = new Kamerinfo("Bij Technische Informatie Analyse wordt het probleem grondig geanalyseerd en de technische oorzaak achterhaald.");
 
         this.vraagStrategie = new PuzzelVraagStrategie(
                 Map.of(
@@ -31,22 +30,6 @@ public class TIA extends Kamer {
                 6,
                 zwaard
         );
-    }
-
-    @Override
-    protected void toonNaam() {
-        System.out.println("Kamernaam: " + naam);
-    }
-
-    @Override
-    protected void toonBeschrijving() {
-        System.out.println("Beschrijving: " + beschrijving);
-    }
-
-    @Override
-    protected void voerOpdrachtUit() {
-        System.out.println("Opdracht uitvoeren: " + opdracht);
-        infoBoek.showMessage();
     }
 
     @Override

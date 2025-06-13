@@ -10,7 +10,6 @@ import java.util.Map;
 
 public class Scrumboard extends Kamer {
 
-    private Kamerinfo infoBoek;
     private Zwaard zwaard;
 
     public Scrumboard(HintProviderFactory hintProviderFactory) {
@@ -23,9 +22,8 @@ public class Scrumboard extends Kamer {
                 new HintService(hintProviderFactory, 5)
         );
 
-        // Initieer objecten na super()
         this.zwaard = new Zwaard();
-        this.infoBoek = new Kamerinfo("Het ScrumBoard helpt teams visueel bij het volgen van de voortgang en taken tijdens een sprint.");
+        super.infoBoek = new Kamerinfo("Het ScrumBoard helpt teams visueel bij het volgen van de voortgang en taken tijdens een sprint.");
 
         this.vraagStrategie = new PuzzelVraagStrategie(
                 Map.of(
@@ -38,22 +36,6 @@ public class Scrumboard extends Kamer {
         );
     }
 
-    @Override
-    protected void toonNaam() {
-        System.out.println("Kamernaam: " + naam);
-    }
-
-    @Override
-    protected void toonBeschrijving() {
-        System.out.println("Beschrijving: " + beschrijving);
-    }
-
-    @Override
-    protected void voerOpdrachtUit() {
-        System.out.println("Opdracht uitvoeren: " + opdracht);
-        infoBoek.showMessage();
-        // zwaard.attack(); // Alleen via strategie bij monster
-    }
 
     @Override
     public int getKamerNummer() {

@@ -5,9 +5,11 @@ import Assistent.HintActie;
 import Assistent.HulpmiddelActie;
 import Assistent.MotivatieActie;
 import Hint.HintService;
+import Objects.Kamerinfo;
 import Strategy.VraagStrategie;
 import java.util.Arrays;
 import java.util.Scanner;
+
 
 public abstract class Kamer {
     protected String naam;
@@ -15,6 +17,7 @@ public abstract class Kamer {
     protected String type;
     protected String opdracht;
     private AssistentActie assistentActie;
+    protected Kamerinfo infoBoek;
 
     protected VraagStrategie vraagStrategie;
     protected HintService hintService;
@@ -36,8 +39,6 @@ public abstract class Kamer {
                 new MotivatieActie()
         ));
     }
-
-
 
     public final boolean kamerMenu(Scanner scanner) {
         toonNaam();
@@ -88,34 +89,37 @@ public abstract class Kamer {
         return true;
     }
 
-    protected abstract void toonNaam();
-    protected abstract void toonBeschrijving();
-    protected abstract void voerOpdrachtUit();
     public abstract int getKamerNummer();
 
-    /**
-     * KeyJoker ondersteuning: standaard doet een kamer niets,
-     * maar specifieke kamers kunnen dit overschrijven.
-     */
-    public void gebruikKeyJoker() {
-        // Default geen effect, voorkomt fouten en if-checks in de KeyJoker zelf
+    protected void toonNaam() {
+        System.out.println("Kamernaam: " + naam);
     }
 
-    /**
-     * Optioneel extra sleutel aan de speler geven.
-     */
+    protected void toonBeschrijving() {
+        System.out.println("Beschrijving: " + beschrijving);
+    }
+
+    protected void voerOpdrachtUit() {
+        System.out.println("Opdracht uitvoeren: " + opdracht);
+        if (infoBoek != null) {
+            infoBoek.showMessage();
+        }
+    }
+
+
+    public void gebruikKeyJoker() {
+
+    }
+
     public void geefExtraSleutel() {
         System.out.println("Je hebt een extra sleutel ontvangen!");
     }
-
     public boolean isMonsterVerslagen() {
         return monsterVerslagen;
     }
-
     public boolean isMonsterAanwezig() {
         return monsterAanwezig;
     }
-
     public String getNaam() {
         return naam;
     }

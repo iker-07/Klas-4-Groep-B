@@ -9,7 +9,6 @@ import Jokers.KeyJokerSupport;
 
 public class Sprintreview extends Kamer implements KeyJokerSupport {
 
-    private final Kamerinfo infoBoek;
     private final Zwaard zwaard;
 
     public Sprintreview(HintProviderFactory hintProviderFactory) {
@@ -23,7 +22,7 @@ public class Sprintreview extends Kamer implements KeyJokerSupport {
         );
 
         this.zwaard = new Zwaard();
-        this.infoBoek = new Kamerinfo("De Sprint Review is een bijeenkomst om het resultaat van de sprint te inspecteren en feedback te krijgen.");
+        super.infoBoek = new Kamerinfo("De Sprint Review is een bijeenkomst om het resultaat van de sprint te inspecteren en feedback te krijgen.");
 
         this.vraagStrategie = new OpenVraagStrategie(
                 "Wat is het doel van de Sprint Review?",
@@ -36,21 +35,6 @@ public class Sprintreview extends Kamer implements KeyJokerSupport {
         this.monsterAanwezig = true;
     }
 
-    @Override
-    protected void toonNaam() {
-        System.out.println("Kamernaam: " + naam);
-    }
-
-    @Override
-    protected void toonBeschrijving() {
-        System.out.println("Beschrijving: " + beschrijving);
-    }
-
-    @Override
-    protected void voerOpdrachtUit() {
-        System.out.println("Opdracht uitvoeren: " + opdracht);
-        infoBoek.showMessage();
-    }
 
     @Override
     public int getKamerNummer() {

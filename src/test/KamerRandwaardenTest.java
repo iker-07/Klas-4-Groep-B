@@ -13,6 +13,7 @@ public class KamerRandwaardenTest {
 
         // Simuleer al 5 kamers voltooid
         controller.voltooideKamers.addAll(Arrays.asList(1, 2, 3, 4, 5));
+        System.out.println("al voltooide kamers (1, 2, 3, 4, 5)");
 
         System.out.println("Kamer 0 toegestaan? " + controller.isKamerToegestaan(0)); // false
         System.out.println("Kamer 1 toegestaan? " + controller.isKamerToegestaan(1)); // false (al voltooid)

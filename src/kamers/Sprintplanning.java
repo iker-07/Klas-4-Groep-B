@@ -24,7 +24,7 @@ public class Sprintplanning extends Kamer {
         super.infoBoek = new Kamerinfo("Tijdens Sprint Planning bepaalt het team de doelen voor de komende sprint.");
 
         this.vraagStrategie = new MeerkeuzeVraagStrategie(
-                "Wat gebeurt er tijdens Sprint Planning?",
+                "Wat gebeurt er tijdens Sprint Planning? ",
                 new String[]{
                         "Sprint doelen bepalen",
                         "Review van vorige sprint",

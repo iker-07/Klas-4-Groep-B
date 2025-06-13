@@ -122,7 +122,7 @@ public class SpelController {
     }
 
     private void gebruikJoker() {
-        System.out.print("Voor welke kamer wil je de joker gebruiken? (typ kamer nummer): ");
+        System.out.print("Voor welke kamer wil je de joker gebruiken (1 & 4)? (typ kamer nummer): ");
         try {
             int kamerNummer = Integer.parseInt(scanner.nextLine().trim());
             Kamer kamer = Spel.kiesKamer(kamerNummer);

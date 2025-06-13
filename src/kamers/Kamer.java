@@ -120,9 +120,8 @@ public abstract class Kamer {
         return naam;
     }
     public void gebruikAssistent() {
-        System.out.println("Hint: Probeer de sleutel onder de mat te zoeken.");
-        System.out.println("Hulpmiddel toegevoegd: Stappenplan voor deze kamer.");
-        System.out.println("Motivatie: Je denkt als een echte product owner!");
+        assistentActie.activeer();
+
     }
 
 }

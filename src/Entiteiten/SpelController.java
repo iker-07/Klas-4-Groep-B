@@ -90,6 +90,7 @@ public class SpelController {
             }
         }
 
+
         if (voltooideKamers.size() == 6) {
 
             Kamer finaleKamer = Spel.kiesKamer(7);

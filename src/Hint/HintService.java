@@ -7,5 +7,6 @@ package Hint;public class HintService {
     }    public String getHint() {
         HintProvider provider = factory.kiesRandomProvider(kamerNummer);
         return provider.getHint();
+
     }
 }

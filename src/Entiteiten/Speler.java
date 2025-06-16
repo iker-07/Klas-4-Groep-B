@@ -9,6 +9,16 @@ public class Speler {
 
     public static ArrayList<Integer> Voltooid = new ArrayList<>();
 
+    private static int zwaardGebruiken = 0;
+
+    public static boolean kanZwaardGebruiken() {
+        return zwaardGebruiken < 2;
+    }
+
+    public static void gebruikZwaard() {
+        zwaardGebruiken++;
+    }
+
     public Speler(String spelerNaam) {
 
     }

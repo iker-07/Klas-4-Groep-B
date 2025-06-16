@@ -6,6 +6,8 @@ import Jokers.Joker;
 import Jokers.KeyJoker;
 import Objects.Zwaard;
 import Hint.HintProvider;
+import Entiteiten.Speler;
+
 
 public class BlokTekst {
     private static Joker gekozenJoker;
@@ -17,10 +19,17 @@ public class BlokTekst {
         String keuze = scanner.nextLine().trim().toLowerCase();
 
         if (keuze.equals("ja") || keuze.equals("j")) {
-            zwaard.attack();
-            System.out.println("Het monster is verslagen. Je mag doorgaan.");
-            return true;
-        } else {
+            if (Speler.kanZwaardGebruiken()) {
+                zwaard.attack();
+                System.out.println("Het monster is verslagen. Je mag doorgaan.");
+                return true;
+            } else {
+                System.out.println("Je hebt het zwaard al 2 keer gebruikt. Je kunt het niet meer gebruiken.");
+                System.out.println("Het monster blijft staan.");
+                return false;
+            }
+        }
+        else {
             Monster monster = new Monster();
             monster.verschijnt(kamerNummer);
             System.out.println("Je blijft geblokkeerd. Het monster staat nog steeds in de weg.");

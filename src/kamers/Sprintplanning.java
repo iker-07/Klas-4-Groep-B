@@ -27,7 +27,7 @@ public class Sprintplanning extends Kamer {
                 "Wat gebeurt er tijdens Sprint Planning? ",
                 new String[]{
                         "Sprint doelen bepalen",
-                        "Review van vorige sprint",
+                        "Review van de vorige sprint",
                         "Dagelijkse stand-up",
                         "Sprint Retrospective"
                 },

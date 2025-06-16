@@ -27,8 +27,8 @@ public class Scrumboard extends Kamer {
 
         this.vraagStrategie = new PuzzelVraagStrategie(
                 Map.of(
-                        "Visualiseert taken en voortgang", "ScrumBoard",
-                        "Wordt bijgehouden tijdens sprint", "ScrumBoard"
+                        "Visualiseert taken en voortgang", "Scrumboard",
+                        "Wordt bijgehouden tijdens sprint", "Scrumboard"
                 ),
                 hintProviderFactory,
                 5,

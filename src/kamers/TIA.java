@@ -23,8 +23,8 @@ public class TIA extends Kamer {
 
         this.vraagStrategie = new PuzzelVraagStrategie(
                 Map.of(
-                        "Probleem grondig analyseren", "Probleem grondig analyseren",
-                        "Technische oorzaak achterhalen", "Technische oorzaak achterhalen"
+                        "Probleem grondig analyseren", "Technische Informatie Analyse",
+                        "Technische oorzaak achterhalen", "Technische Informatie Analyse"
                 ),
                 hintProviderFactory,
                 6,

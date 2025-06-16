@@ -27,7 +27,7 @@ public class DailyScrum extends Kamer implements KeyJokerSupport {
 
         this.vraagStrategie = new OpenVraagStrategie(
                 "Wie leidt de Daily Scrum?",
-                "De developers zelf",
+                "de developers",
                 hintProviderFactory,
                 1,
                 zwaard

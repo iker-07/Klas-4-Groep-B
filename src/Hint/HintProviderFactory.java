@@ -10,7 +10,7 @@ public class HintProviderFactory {
     public HintProviderFactory() {
         // kamers.Kamer 1 - Daily Scrum
         helpHintsPerKamer.put(1, List.of(
-                "Een standup duurt maximaal 15 minuten.",
+                "de developers organiseren een dagelijkse bijeenkomst",
                 "Iedereen deelt wat hij heeft gedaan sinds de vorige meeting."
         ));
         funnyHintsPerKamer.put(1, List.of(
@@ -30,7 +30,7 @@ public class HintProviderFactory {
 
         // kamers.Kamer 3 - Sprint Retrospective
         helpHintsPerKamer.put(3, List.of(
-                "Tijdens de Sprint Retrospective bespreek je wat beter kan.",
+                "Tijdens de Sprint Retrospective bespreek je wat goed en beter kan.",
                 "Reflecteer op de afgelopen sprint."
         ));
         funnyHintsPerKamer.put(3, List.of(
@@ -50,7 +50,7 @@ public class HintProviderFactory {
 
         // kamers.Kamer 5 - kamers.Scrumboard
         helpHintsPerKamer.put(5, List.of(
-                "kamers.Scrumboard toont je voortgang.",
+                "Het scrumboard toont je voortgang!",
                 "Taken worden zichtbaar tijdens de sprint."
         ));
         funnyHintsPerKamer.put(5, List.of(
@@ -60,7 +60,7 @@ public class HintProviderFactory {
 
         // kamers.Kamer 6 - kamers.TIA (Technische Informatie Analyse)
         helpHintsPerKamer.put(6, List.of(
-                "Tijdens de Daily Scrum synchroniseer je dagelijks.",
+                "Wat betekende TIA ook alweer?",
                 "De standup duurt maximaal 15 minuten."
         ));
         funnyHintsPerKamer.put(6, List.of(
@@ -68,15 +68,6 @@ public class HintProviderFactory {
                 "Praat niet over het weer, focus op werk!"
         ));
 
-        // kamers.Kamer 7 - Finale kamer
-        helpHintsPerKamer.put(7, List.of(
-                "Technische informatie analyse helpt problemen te doorgronden.",
-                "Analyseer grondig om de oorzaak te vinden."
-        ));
-        funnyHintsPerKamer.put(7, List.of(
-                "Niet alles hoeft met duct tape te worden opgelost!",
-                "Computer zegt nee, maar probeer het toch."
-        ));
     }
 
     public HintProvider kiesRandomProvider(int kamerNummer) {

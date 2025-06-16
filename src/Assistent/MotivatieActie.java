@@ -4,7 +4,7 @@ import Interfaces.Actie;
 
 public class MotivatieActie implements Actie {
     public void uitvoer() {
-        System.out.println("Motivatie: Je denkt als een echte product owner!");
+        System.out.println("Motivatie: Je bent GEWELDIG!!!!!!!!!!!!\n\n");
     }
 }
 
